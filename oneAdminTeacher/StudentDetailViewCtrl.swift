@@ -88,13 +88,6 @@ class StudentDetailViewCtrl: UIViewController {
     override func viewDidAppear(animated: Bool) {
         
         if mustFlipPhoto{
-//            UIView.transitionWithView(PhotoImage, duration: 1, options: UIViewAnimationOptions.TransitionFlipFromTop, animations: { () -> Void in
-//                self.PhotoImage.alpha = 1.0
-//                self.PhotoImage.image = self.StudentData.Photo
-//                }) { (Bool) -> Void in
-//                    self.mustFlipPhoto = false
-//            }
-            
             UIView.animateWithDuration(1.5, animations: { () -> Void in
                 self.PhotoImage.alpha = 1.0
             }, completion: { (finish) -> Void in
@@ -106,7 +99,9 @@ class StudentDetailViewCtrl: UIViewController {
             return
         }
         
-        self.SegmentValueChange(self)
+        dispatch_async(dispatch_get_main_queue(), {
+            self.SegmentValueChange(self)
+        })
     }
     
     override func didReceiveMemoryWarning() {
@@ -116,21 +111,31 @@ class StudentDetailViewCtrl: UIViewController {
     
     @IBAction func SegmentValueChange(sender: AnyObject) {
         
+        lastSegmentIndex = Segment.selectedSegmentIndex
+        
         if Segment.selectedSegmentIndex == 0{
-            let contentView = self.storyboard?.instantiateViewControllerWithIdentifier("PhotoPreviewViewCtrl") as! PhotoPreviewViewCtrl
+            let contentView = self.storyboard?.instantiateViewControllerWithIdentifier("StudentAlbumViewCtrl") as! StudentAlbumViewCtrl
             
-            contentView.GroupData = Global.GetTestGroup
+            contentView.StudentData = StudentData
             
             ChangeContainerViewContent(contentView)
         }
-//        else if Segment.selectedSegmentIndex == 1{
-//            let contentView = self.storyboard?.instantiateViewControllerWithIdentifier("disciplineViewCtrl") as! DisciplineViewCtrl
-//            ChangeContainerViewContent(contentView)
-//        }
-//        else if Segment.selectedSegmentIndex == 2{
-//            let contentView = self.storyboard?.instantiateViewControllerWithIdentifier("examScoreViewCtrl") as! ExamScoreViewCtrl
-//            ChangeContainerViewContent(contentView)
-//        }
+        else if Segment.selectedSegmentIndex == 1{
+            
+            let contentView = self.storyboard?.instantiateViewControllerWithIdentifier("TempPageViewCtrl") as! TempPageViewCtrl
+            
+            contentView.SubText = "作品典藏頁面"
+            
+            ChangeContainerViewContent(contentView)
+        }
+        else if Segment.selectedSegmentIndex == 2{
+            
+            let contentView = self.storyboard?.instantiateViewControllerWithIdentifier("TempPageViewCtrl") as! TempPageViewCtrl
+            
+            contentView.SubText = "健康管理頁面"
+            
+            ChangeContainerViewContent(contentView)
+        }
 //        else if Segment.selectedSegmentIndex == 3{
 //            let contentView = self.storyboard?.instantiateViewControllerWithIdentifier("semesterScoreViewCtrl") as! SemesterScoreViewCtrl
 //            ChangeContainerViewContent(contentView)

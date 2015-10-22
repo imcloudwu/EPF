@@ -285,20 +285,28 @@ class PhotoEditViewCtrl: UIViewController,UIImagePickerControllerDelegate,ELCIma
         
         self.view.endEditing(true)
         
-        //insert
-        if Base == nil{
-            InsertPhoto()
-        }
-        else{
-            //update
-            UpdatePhoto()
-        }
+        self.navigationItem.rightBarButtonItem?.enabled = false
         
-        Global.MyToast.ToastMessage(self.view, msg: "儲存完成...") { () -> () in
-            self.navigationController?.popViewControllerAnimated(true)
-        }
+        Global.MyToast.ShowMessage(self.view, msg: "儲存中...")
+        
+        dispatch_async(dispatch_get_main_queue(), {
+            
+            if self.Base == nil{
+                self.InsertPhoto()
+            }
+            else{
+                //update
+                self.UpdatePhoto()
+            }
+            
+            Global.MyToast.HideMessage(self.view)
+            
+            Global.MyToast.ToastMessage(self.view, msg: "儲存完成...") { () -> () in
+                self.navigationController?.popViewControllerAnimated(true)
+            }
+        })
     }
-    
+
     func InsertPhoto(){
         
         Global.PhotoNeedReload = true
@@ -344,8 +352,10 @@ class PhotoEditViewCtrl: UIViewController,UIImagePickerControllerDelegate,ELCIma
     
     func SaveTags(refDataId:String){
         
+        var deleteOnly = ""
+        
         if _TagSelector.Selected.count == 0{
-            return
+            deleteOnly = "<DeleteOnly>true</DeleteOnly>"
         }
         
         var studentIds = ""
@@ -360,7 +370,7 @@ class PhotoEditViewCtrl: UIViewController,UIImagePickerControllerDelegate,ELCIma
         
         var err : DSFault!
         
-        var rsp = con.SendRequest("main.UpdateTag", bodyContent: "<Request><RefDataId>\(refDataId)</RefDataId><Students>\(studentIds)</Students></Request>", &err)
+        var rsp = con.SendRequest("main.UpdateTag", bodyContent: "<Request>\(deleteOnly)<RefDataId>\(refDataId)</RefDataId><Students>\(studentIds)</Students></Request>", &err)
         
         if rsp.isEmpty{
             println(err.message)

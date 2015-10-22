@@ -8,6 +8,19 @@
 
 import UIKit
 
+class GroupHeader : UICollectionReusableView {
+    
+    @IBOutlet weak var title: UILabel!
+    
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        title.text = "this is a header"
+        title.layer.cornerRadius = 5
+        title.layer.masksToBounds = true
+        // Initialization code
+    }
+}
+
 class PhotoGalleryCell : UITableViewCell{
     
     @IBOutlet weak var GalleryPhoto: UIImageView!

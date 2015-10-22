@@ -139,6 +139,8 @@ class PhotoPageViewCtrl: UIViewController,UIScrollViewDelegate
         
         var rsp = con.SendRequest("main.DeletePhoto", bodyContent: "<Request><epf.data><Uid>\(Base.Uid)</Uid><RefGroupId>\(Base.Group)</RefGroupId></epf.data></Request>", &err)
         
+        rsp = con.SendRequest("main.UpdateTag", bodyContent: "<Request><DeleteOnly>true</DeleteOnly><RefDataId>\(Base.Uid)</RefDataId></Request>", &err)
+        
         Global.MyToast.ToastMessage(self.view, msg: "刪除完成...") { () -> () in
             self.navigationController?.popViewControllerAnimated(true)
         }

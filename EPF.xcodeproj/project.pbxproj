@@ -87,8 +87,11 @@
 		618BF7B81BCBA2C80065203E /* Overlay.png in Resources */ = {isa = PBXBuildFile; fileRef = 618BF7AC1BCBA2C80065203E /* Overlay.png */; };
 		618BF7B91BCBA2C80065203E /* Overlay@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 618BF7AD1BCBA2C80065203E /* Overlay@2x.png */; };
 		618BF7C21BCBB2D20065203E /* PhotoEditViewCtrl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 618BF7C11BCBB2D20065203E /* PhotoEditViewCtrl.swift */; };
+		618F5EBE1BD76FD0003C4D59 /* ccc.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 618F5EBD1BD76FD0003C4D59 /* ccc.jpg */; };
+		618F5EC01BD770B3003C4D59 /* ddd.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 618F5EBF1BD770B3003C4D59 /* ddd.jpg */; };
 		619820A11BCE2ED00018F86D /* UploadPhotoFunc.swift in Sources */ = {isa = PBXBuildFile; fileRef = 619820A01BCE2ED00018F86D /* UploadPhotoFunc.swift */; };
 		619A056D1B8C790A0030276C /* KeyinViewCtrl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 619A056C1B8C790A0030276C /* KeyinViewCtrl.swift */; };
+		619C28DD1BD8F0ED00F856F9 /* TempPageViewCtrl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 619C28DC1BD8F0ED00F856F9 /* TempPageViewCtrl.swift */; };
 		619C5EDA1B43C5500019C284 /* AttendanceViewCtrl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 619C5ED91B43C5500019C284 /* AttendanceViewCtrl.swift */; };
 		619D31E31B451647008409F9 /* DisciplineViewCtrl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 619D31E21B451647008409F9 /* DisciplineViewCtrl.swift */; };
 		619EA1D81B5F8F4500EE4BE7 /* MessageDetailViewCtrl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 619EA1D71B5F8F4500EE4BE7 /* MessageDetailViewCtrl.swift */; };
@@ -121,6 +124,8 @@
 		61CA69401B5E5D27002D2842 /* ParseUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 61CA693A1B5E5D27002D2842 /* ParseUI.framework */; };
 		61CCE30A1BC6450600FD1C17 /* Gallery-64.png in Resources */ = {isa = PBXBuildFile; fileRef = 61CCE3091BC6450600FD1C17 /* Gallery-64.png */; };
 		61CCE30C1BC67CCE00FD1C17 /* PhotoCoreData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61CCE30B1BC67CCE00FD1C17 /* PhotoCoreData.swift */; };
+		61DA54B01BD72FF20095D279 /* StudentAlbumViewCtrl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61DA54AF1BD72FF20095D279 /* StudentAlbumViewCtrl.swift */; };
+		61DA54B21BD740D30095D279 /* bbb.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 61DA54B11BD740D30095D279 /* bbb.jpg */; };
 		61DACF6F1B6225FF001D5633 /* MessageCoreData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61DACF6E1B6225FF001D5633 /* MessageCoreData.swift */; };
 		61E308D71B2A997400BE36D0 /* Classroom Filled-50.png in Resources */ = {isa = PBXBuildFile; fileRef = 61E308D51B2A997400BE36D0 /* Classroom Filled-50.png */; };
 		61E574721B85B56E00D2BD21 /* Message Filled-32 White.png in Resources */ = {isa = PBXBuildFile; fileRef = 61E5746D1B85B56E00D2BD21 /* Message Filled-32 White.png */; };
@@ -258,8 +263,11 @@
 		618BF7AC1BCBA2C80065203E /* Overlay.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Overlay.png; sourceTree = "<group>"; };
 		618BF7AD1BCBA2C80065203E /* Overlay@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Overlay@2x.png"; sourceTree = "<group>"; };
 		618BF7C11BCBB2D20065203E /* PhotoEditViewCtrl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoEditViewCtrl.swift; sourceTree = "<group>"; };
+		618F5EBD1BD76FD0003C4D59 /* ccc.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = ccc.jpg; path = image/ccc.jpg; sourceTree = SOURCE_ROOT; };
+		618F5EBF1BD770B3003C4D59 /* ddd.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = ddd.jpg; path = image/ddd.jpg; sourceTree = SOURCE_ROOT; };
 		619820A01BCE2ED00018F86D /* UploadPhotoFunc.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UploadPhotoFunc.swift; sourceTree = "<group>"; };
 		619A056C1B8C790A0030276C /* KeyinViewCtrl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyinViewCtrl.swift; sourceTree = "<group>"; };
+		619C28DC1BD8F0ED00F856F9 /* TempPageViewCtrl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TempPageViewCtrl.swift; sourceTree = "<group>"; };
 		619C5ED91B43C5500019C284 /* AttendanceViewCtrl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AttendanceViewCtrl.swift; sourceTree = "<group>"; };
 		619D31E21B451647008409F9 /* DisciplineViewCtrl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DisciplineViewCtrl.swift; sourceTree = "<group>"; };
 		619EA1D71B5F8F4500EE4BE7 /* MessageDetailViewCtrl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageDetailViewCtrl.swift; sourceTree = "<group>"; };
@@ -298,6 +306,8 @@
 		61CA693A1B5E5D27002D2842 /* ParseUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ParseUI.framework; sourceTree = "<group>"; };
 		61CCE3091BC6450600FD1C17 /* Gallery-64.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Gallery-64.png"; path = "icon/Gallery-64.png"; sourceTree = SOURCE_ROOT; };
 		61CCE30B1BC67CCE00FD1C17 /* PhotoCoreData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoCoreData.swift; sourceTree = "<group>"; };
+		61DA54AF1BD72FF20095D279 /* StudentAlbumViewCtrl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StudentAlbumViewCtrl.swift; sourceTree = "<group>"; };
+		61DA54B11BD740D30095D279 /* bbb.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = bbb.jpg; path = image/bbb.jpg; sourceTree = SOURCE_ROOT; };
 		61DACF6E1B6225FF001D5633 /* MessageCoreData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageCoreData.swift; sourceTree = "<group>"; };
 		61E308D51B2A997400BE36D0 /* Classroom Filled-50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Classroom Filled-50.png"; path = "icon/Classroom Filled-50.png"; sourceTree = SOURCE_ROOT; };
 		61E5746D1B85B56E00D2BD21 /* Message Filled-32 White.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Message Filled-32 White.png"; path = "icon/Message Filled-32 White.png"; sourceTree = SOURCE_ROOT; };
@@ -612,6 +622,8 @@
 				619820A01BCE2ED00018F86D /* UploadPhotoFunc.swift */,
 				611110141BD0B1D000EA27AA /* PhotoPageViewCtrl.swift */,
 				61E83ED31BD6183E00F90CE2 /* StudentTagViewCtrl.swift */,
+				61DA54AF1BD72FF20095D279 /* StudentAlbumViewCtrl.swift */,
+				619C28DC1BD8F0ED00F856F9 /* TempPageViewCtrl.swift */,
 			);
 			path = oneAdminTeacher;
 			sourceTree = "<group>";
@@ -644,6 +656,9 @@
 		61F550AE1B2A7A8E00E26A5D /* image */ = {
 			isa = PBXGroup;
 			children = (
+				618F5EBF1BD770B3003C4D59 /* ddd.jpg */,
+				618F5EBD1BD76FD0003C4D59 /* ccc.jpg */,
+				61DA54B11BD740D30095D279 /* bbb.jpg */,
 				617ABAC01BC27CD30008C25C /* sidemenu_background.jpg */,
 				617ABABE1BC278310008C25C /* mass_background.jpg */,
 				610AC8471BC23845004FF6F4 /* top-of-the-world.jpg */,
@@ -766,15 +781,18 @@
 				61051F321B57463A00755ED5 /* background5.png in Resources */,
 				613E8B0F1B94375C0020228E /* Coins-50.png in Resources */,
 				6114C9011B43A2A800C73E5E /* Today-32.png in Resources */,
+				618F5EC01BD770B3003C4D59 /* ddd.jpg in Resources */,
 				6105322E1B8ACC290003C936 /* shutterstock_196751174.jpg in Resources */,
 				6173AAD51B5797920049EB63 /* sidebackground.jpg in Resources */,
 				612123F11B412A3B000AA07D /* Phone-32.png in Resources */,
+				61DA54B21BD740D30095D279 /* bbb.jpg in Resources */,
 				61A8113B1BCE43CF004BADE5 /* SLR Camera Filled-100.png in Resources */,
 				6105322A1B8AC1690003C936 /* Plus Math-100.png in Resources */,
 				617ABABF1BC278310008C25C /* mass_background.jpg in Resources */,
 				617F32311B60F90100A03CD6 /* Message Filled-50.png in Resources */,
 				61E574741B85B56E00D2BD21 /* Starred Ticket Filled-32.png in Resources */,
 				613C58831B2ACDDD00461072 /* Leave Filled-50.png in Resources */,
+				618F5EBE1BD76FD0003C4D59 /* ccc.jpg in Resources */,
 				61E574761B85B56E00D2BD21 /* Starred Ticket-32.png in Resources */,
 				6100D0F71B86E62F005AEF65 /* iPad2-120.png in Resources */,
 				610641A61BBE421800BA83BF /* Checked-32.png in Resources */,
@@ -859,6 +877,7 @@
 				610882C41B8C067000CEBBE5 /* ScanCodeViewCtrl.swift in Sources */,
 				6105832C1B4BAB4500274EEA /* ExamScoreViewCtrl.swift in Sources */,
 				615BB25A1B3BD4F800864052 /* HttpClient.swift in Sources */,
+				619C28DD1BD8F0ED00F856F9 /* TempPageViewCtrl.swift in Sources */,
 				610EA13F1B8EC0A700EB54B0 /* PurchaseViewCtrl.swift in Sources */,
 				61E5747E1B85C2E900D2BD21 /* WatchReaderListViewCtrl.swift in Sources */,
 				61339E531BB29E9200757A46 /* KYCircularProgress.swift in Sources */,
@@ -873,6 +892,7 @@
 				61E574931B85C47100D2BD21 /* PDPieChart.swift in Sources */,
 				615BB2641B3BFC5A00864052 /* Global.swift in Sources */,
 				611485611B65EEA400B54BBB /* NotificationService.swift in Sources */,
+				61DA54B01BD72FF20095D279 /* StudentAlbumViewCtrl.swift in Sources */,
 				61E574841B85C3E800D2BD21 /* ChartViewCtrl.swift in Sources */,
 				618BF7C21BCBB2D20065203E /* PhotoEditViewCtrl.swift in Sources */,
 				61B519591BC4F7230096191C /* PhotoManageViewCtrl.swift in Sources */,
