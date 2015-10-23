@@ -86,7 +86,7 @@ class PhotoPreviewViewCtrl: UIViewController,UICollectionViewDelegateFlowLayout,
             else{
                 
                 dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0), {
-                    self.UpdatePreviewData(data)
+                    UpdatePreviewData(data)
                     
                     dispatch_async(dispatch_get_main_queue(), {
                         PhotoCoreData.SaveCatchData(data)
@@ -171,32 +171,32 @@ class PhotoPreviewViewCtrl: UIViewController,UICollectionViewDelegateFlowLayout,
         return retVal
     }
     
-    func UpdatePreviewData(data:PreviewData) -> Bool {
-        
-        var con = GetCommonConnect(GroupData.DSNS, Global.TeacherContractName)
-        
-        var err : DSFault!
-        
-        var rsp = con.SendRequest("main.GetPreviewData", bodyContent: "<Request><Uid>\(data.Uid)</Uid></Request>", &err)
-        
-        if rsp.isEmpty{
-            return false
-        }
-        
-        var nserr : NSError?
-        var xml = AEXMLDocument(xmlData: rsp.dataValue, error: &nserr)
-        
-        if nserr != nil{
-            return false
-        }
-        
-        if let previewData = xml?.root["Response"]["Epf.data"]["PreviewData"].stringValue{
-            data.Photo = GetImageFromBase64(previewData)
-            return true
-        }
-        
-        return false
-    }
+//    func UpdatePreviewData(data:PreviewData) -> Bool {
+//        
+//        var con = GetCommonConnect(GroupData.DSNS, Global.TeacherContractName)
+//        
+//        var err : DSFault!
+//        
+//        var rsp = con.SendRequest("main.GetPreviewData", bodyContent: "<Request><Uid>\(data.Uid)</Uid></Request>", &err)
+//        
+//        if rsp.isEmpty{
+//            return false
+//        }
+//        
+//        var nserr : NSError?
+//        var xml = AEXMLDocument(xmlData: rsp.dataValue, error: &nserr)
+//        
+//        if nserr != nil{
+//            return false
+//        }
+//        
+//        if let previewData = xml?.root["Response"]["Epf.data"]["PreviewData"].stringValue{
+//            data.Photo = GetImageFromBase64(previewData)
+//            return true
+//        }
+//        
+//        return false
+//    }
 }
 
 class PreviewData{

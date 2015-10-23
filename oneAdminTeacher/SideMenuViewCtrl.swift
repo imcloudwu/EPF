@@ -43,6 +43,14 @@ class SideMenuViewCtrl: UIViewController{
         MyPhoto.image = Global.MyPhoto
     }
     
+    @IBAction func NewsBtnClick(sender: AnyObject) {
+        
+        //        let nextView = self.storyboard?.instantiateViewControllerWithIdentifier("ClassQuery") as! UIViewController
+        let nextView = self.storyboard?.instantiateViewControllerWithIdentifier("LastNews") as! UIViewController
+        
+        ChangeContentView(nextView)
+    }
+    
     @IBAction func Btn1(sender: AnyObject) {
         
 //        let nextView = self.storyboard?.instantiateViewControllerWithIdentifier("ClassQuery") as! UIViewController

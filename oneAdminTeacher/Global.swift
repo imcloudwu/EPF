@@ -51,6 +51,8 @@ public class Global{
     
     static var PhotoNeedReload : Bool!
     
+    //static var WatchingGroup = [GroupItem]()
+    
     static var TeacherGroups: [GroupItem]{
         
         var retVal = [GroupItem]()
@@ -64,17 +66,6 @@ public class Global{
         return retVal
     }
     
-    static var GetTestGroup: GroupItem!{
-        
-        for group in MyGroups{
-            if group.GroupId == "2227872"{
-                return group
-            }
-        }
-        
-        return nil
-    }
-    
     static func Reset(){
         MyUUID = ""
         MyPhoto = nil
@@ -84,6 +75,7 @@ public class Global{
         MyTeacherList = [TeacherAccount]()
         SchoolConnector = [String:Connection]()
         MyGroups = [GroupItem]()
+        //WatchingGroup = [GroupItem]()
         
         let fm = NSFileManager()
         fm.removeItemAtPath(MyPhotoLocalPath, error: nil)

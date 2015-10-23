@@ -53,7 +53,7 @@ class StudentAlbumViewCtrl: UIViewController,UICollectionViewDelegateFlowLayout,
         
         dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0), {
             
-            let myGroups = self.GetGroupMembers()
+            let myGroups = GetMyChildGroup(self.StudentData)
             let myTags = self.GetMyTagPreviewDatas()
             
             dispatch_async(dispatch_get_main_queue(), {
@@ -124,7 +124,7 @@ class StudentAlbumViewCtrl: UIViewController,UICollectionViewDelegateFlowLayout,
                 else{
                     
                     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0), {
-                        self.UpdatePreviewData(data)
+                        UpdatePreviewData(data)
                         
                         dispatch_async(dispatch_get_main_queue(), {
                             PhotoCoreData.SaveCatchData(data)
@@ -266,78 +266,6 @@ class StudentAlbumViewCtrl: UIViewController,UICollectionViewDelegateFlowLayout,
         
         return retVal
     }
-    
-    func UpdatePreviewData(data:PreviewData) -> Bool {
-        
-        var con = GetCommonConnect(data.Dsns, Global.BasicContractName)
-        
-        var err : DSFault!
-        
-        var rsp = con.SendRequest("album.GetPreviewData", bodyContent: "<Request><Uid>\(data.Uid)</Uid></Request>", &err)
-        
-        if rsp.isEmpty{
-            return false
-        }
-        
-        var nserr : NSError?
-        var xml = AEXMLDocument(xmlData: rsp.dataValue, error: &nserr)
-        
-        if nserr != nil{
-            return false
-        }
-        
-        if let previewData = xml?.root["Response"]["Epf.data"]["PreviewData"].stringValue{
-            data.Photo = GetImageFromBase64(previewData)
-            return true
-        }
-        
-        return false
-    }
-    
-    func GetGroupMembers() -> [GroupItem]{
-        
-        var retVal = [GroupItem]()
-        
-        var rsp = HttpClient.Get("https://dsns.1campus.net/\(StudentData.DSNS)/sakura/GetMyChild?stt=PassportAccessToken&AccessToken=\(Global.AccessToken)")
-        
-        if rsp == nil{
-            return retVal
-        }
-        
-        var nserr : NSError?
-        var xml = AEXMLDocument(xmlData: rsp!, error: &nserr)
-        
-        if nserr != nil{
-            return retVal
-        }
-        
-        if let children = xml?.root["Child"].all{
-            
-            for child in children{
-                
-                if child["ChildId"].stringValue != StudentData.ID{
-                    continue
-                }
-                
-                if let groups = child["Group"].all{
-                    
-                    for group in groups{
-                        
-                        let groupId = group["GroupId"].stringValue
-                        let groupName = group["GroupName"].stringValue
-                        let groupOriginal = group["GroupOriginal"].stringValue
-                        
-                        var gi = GroupItem(DSNS: StudentData.DSNS, GroupId: groupId, GroupName: groupName, IsTeacher: false)
-                        retVal.append(gi)
-                    }
-                }
-            }
-        }
-        
-        return retVal
-    }
-
-    
     
 }
 

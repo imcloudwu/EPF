@@ -109,7 +109,7 @@ class ChildListViewCtrl: UIViewController,UITableViewDelegate,UITableViewDataSou
             dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0), {
                 
                 var con = GetCommonConnect(dsns.AccessPoint, Global.BasicContractName)
-                tmpList += self.GetMyChildren(con)
+                tmpList += GetMyChildren(con)
                 
                 dispatch_async(dispatch_get_main_queue(), {
                     
@@ -273,57 +273,4 @@ class ChildListViewCtrl: UIViewController,UITableViewDelegate,UITableViewDataSou
         self.presentViewController(actionSheet, animated: true, completion: nil)
     }
     
-    func GetMyChildren(con:Connection) -> [Student]{
-        
-        var err : DSFault!
-        var nserr : NSError?
-        
-        var retVal = [Student]()
-        
-        var rsp = con.sendRequest("main.GetMyChildren", bodyContent: "", &err)
-        
-        //println(rsp)
-        
-        if err != nil{
-            //ShowErrorAlert(self,"取得資料發生錯誤",err.message)
-            return retVal
-        }
-        
-        let xml = AEXMLDocument(xmlData: rsp.dataValue, error: &nserr)
-        
-        if let students = xml?.root["Student"].all {
-            for stu in students{
-                //println(stu.xmlString)
-                let studentID = stu["StudentId"].stringValue
-                let className = stu["ClassName"].stringValue
-                let studentName = stu["StudentName"].stringValue
-                let seatNo = stu["SeatNo"].stringValue
-                let studentNumber = stu["StudentNumber"].stringValue
-                let gender = stu["Gender"].stringValue
-                let mailingAddress = stu["MailingAddress"].xmlString
-                let permanentAddress = stu["PermanentAddress"].xmlString
-                let contactPhone = stu["ContactPhone"].stringValue
-                let permanentPhone = stu["PermanentPhone"].stringValue
-                let custodianName = stu["CustodianName"].stringValue
-                let fatherName = stu["FatherName"].stringValue
-                let motherName = stu["MotherName"].stringValue
-                let freshmanPhoto = GetImageFromBase64String(stu["StudentPhoto"].stringValue, UIImage(named: "User-100.png"))
-                
-                let stuItem = Student(DSNS: con.accessPoint,ID: studentID, ClassID: "", ClassName: className, Name: studentName, SeatNo: seatNo, StudentNumber: studentNumber, Gender: gender, MailingAddress: mailingAddress, PermanentAddress: permanentAddress, ContactPhone: contactPhone, PermanentPhone: permanentPhone, CustodianName: custodianName, FatherName: fatherName, MotherName: motherName, Photo: freshmanPhoto)
-                
-                retVal.append(stuItem)
-            }
-        }
-        
-        retVal.sort{ $0.SeatNo.toInt() < $1.SeatNo.toInt() }
-        
-        if retVal.count > 0{
-            
-            let schoolName = GetSchoolName(con)
-            
-            retVal.insert(Student(DSNS: "header", ID: "", ClassID: "", ClassName: schoolName, Name: "", SeatNo: "", StudentNumber: "", Gender: "", MailingAddress: "", PermanentAddress: "", ContactPhone: "", PermanentPhone: "", CustodianName: "", FatherName: "", MotherName: "", Photo: nil), atIndex: 0)
-        }
-        
-        return retVal
     }
-}

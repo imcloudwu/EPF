@@ -21,6 +21,19 @@ class GroupHeader : UICollectionReusableView {
     }
 }
 
+class LastNewsCell : UITableViewCell{
+    
+    @IBOutlet weak var Photo: UIImageView!
+    @IBOutlet weak var Date: UILabel!
+    @IBOutlet weak var Group: UILabel!
+    @IBOutlet weak var Comment: UILabel!
+    
+    override func awakeFromNib() {
+        Photo.layer.masksToBounds = true
+        Photo.layer.cornerRadius = 5
+    }
+}
+
 class PhotoGalleryCell : UITableViewCell{
     
     @IBOutlet weak var GalleryPhoto: UIImageView!

@@ -112,7 +112,8 @@ class PrepareViewCtrl: UIViewController {
                                 EnableSideMenu()
                                 
                                 //let nextView = self.storyboard?.instantiateViewControllerWithIdentifier("ClassQuery") as! UIViewController
-                                let nextView = self.storyboard?.instantiateViewControllerWithIdentifier("ChildMainView") as! UIViewController
+                                let nextView = self.storyboard?.instantiateViewControllerWithIdentifier("LastNews") as! UIViewController
+                                
                                 ChangeContentView(nextView)
                             }
                             

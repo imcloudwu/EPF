@@ -161,3 +161,36 @@ extension UIImage{
         return newImage
     }
 }
+
+extension NSDate {
+    public var stringValue: String {
+        
+        let secondsAgo:NSTimeInterval = self.timeIntervalSinceNow
+        
+        let value = -1*secondsAgo
+        
+        let day = Int(value / (60*60*24))
+        let hour = Int(value / (60*60))
+        let min = Int(value / (60))
+        let sec = Int(value)
+        
+        if day > 3 {
+            let dateStr = "\(self)"
+            
+            return dateStr.substringToIndex(advance(dateStr.startIndex, 10))
+        }
+        else if day > 0 {
+            return "\(day) 天以前"
+        }
+        else if hour > 0 {
+            return "\(hour) 小時以前"
+        }
+        else if min > 0 {
+            return "\(min) 分鐘以前"
+        }
+        else{
+            return "\(sec) 秒以前"
+        }
+        
+    }
+}
