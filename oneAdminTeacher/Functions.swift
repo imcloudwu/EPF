@@ -52,12 +52,12 @@ func GetMyChildren(con:Connection) -> [Student]{
     
     retVal.sort{ $0.SeatNo.toInt() < $1.SeatNo.toInt() }
     
-    if retVal.count > 0{
-        
-        let schoolName = GetSchoolName(con)
-        
-        retVal.insert(Student(DSNS: "header", ID: "", ClassID: "", ClassName: schoolName, Name: "", SeatNo: "", StudentNumber: "", Gender: "", MailingAddress: "", PermanentAddress: "", ContactPhone: "", PermanentPhone: "", CustodianName: "", FatherName: "", MotherName: "", Photo: nil), atIndex: 0)
-    }
+//    if retVal.count > 0{
+//        
+//        let schoolName = GetSchoolName(con)
+//        
+//        retVal.insert(Student(DSNS: "header", ID: "", ClassID: "", ClassName: schoolName, Name: "", SeatNo: "", StudentNumber: "", Gender: "", MailingAddress: "", PermanentAddress: "", ContactPhone: "", PermanentPhone: "", CustodianName: "", FatherName: "", MotherName: "", Photo: nil), atIndex: 0)
+//    }
     
     return retVal
 }

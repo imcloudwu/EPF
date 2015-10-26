@@ -7,14 +7,14 @@
 	<key>IDESourceControlProjectIdentifier</key>
 	<string>25F05266-824A-45B5-8641-741D032418B5</string>
 	<key>IDESourceControlProjectName</key>
-	<string>project</string>
+	<string>EPF</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
 		<key>3AA4E8C3EDCFB004835FF7E50EAD9411F1F9DE4D</key>
 		<string>https://github.com/imcloudwu/EPF.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>EPF.xcodeproj/project.xcworkspace</string>
+	<string>EPF.xcodeproj</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
 		<key>3AA4E8C3EDCFB004835FF7E50EAD9411F1F9DE4D</key>

@@ -12,10 +12,17 @@ class LastNewsViewCtrl: UIViewController,UITableViewDelegate,UITableViewDataSour
     
     @IBOutlet weak var tableView: UITableView!
     
+    var refreshControl : UIRefreshControl!
+    
     var _LastNewItems = [LastNewItem]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.refreshControl = UIRefreshControl()
+        self.refreshControl.attributedTitle = NSAttributedString(string: "")
+        self.refreshControl.addTarget(self, action: "ReloadData", forControlEvents: UIControlEvents.ValueChanged)
+        self.tableView.addSubview(refreshControl)
         
         self.navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(named: "Menu-24.png"), style: UIBarButtonItemStyle.Plain, target: self, action: "ToggleSideMenu")
         
@@ -31,7 +38,10 @@ class LastNewsViewCtrl: UIViewController,UITableViewDelegate,UITableViewDataSour
     }
     
     override func viewDidAppear(animated: Bool) {
-        ReloadData()
+        
+        if _LastNewItems.count == 0{
+            ReloadData()
+        }
     }
     
     override func didReceiveMemoryWarning() {
@@ -41,7 +51,13 @@ class LastNewsViewCtrl: UIViewController,UITableViewDelegate,UITableViewDataSour
     
     func ReloadData(){
         
+        self.refreshControl.endRefreshing()
+        
         var lastNewItems = [LastNewItem]()
+        
+        self._LastNewItems = lastNewItems
+        
+        self.tableView.reloadData()
         
         for dsns in Global.DsnsList{
             
@@ -58,20 +74,17 @@ class LastNewsViewCtrl: UIViewController,UITableViewDelegate,UITableViewDataSour
                             
                             dispatch_async(dispatch_get_main_queue(), {
                                 
-                                lastNewItems += lnis
-                                
-                                var sortingBox = [LastNewItem]()
-                                
                                 for lni in lnis{
-                                    if !contains(sortingBox, lni){
-                                        sortingBox.append(lni)
+                                    if !contains(lastNewItems, lni){
+                                        lastNewItems.append(lni)
                                     }
                                 }
                                 
-                                if sortingBox.count > 0 {
-                                    sortingBox.sort({ $0.Date > $1.Date })
+                                if lastNewItems.count > 0 {
                                     
-                                    self._LastNewItems = sortingBox
+                                    lastNewItems.sort({ $0.Date > $1.Date })
+                                    
+                                    self._LastNewItems = lastNewItems
                                     
                                     self.tableView.reloadData()
                                 }

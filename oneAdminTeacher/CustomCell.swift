@@ -31,6 +31,10 @@ class LastNewsCell : UITableViewCell{
     override func awakeFromNib() {
         Photo.layer.masksToBounds = true
         Photo.layer.cornerRadius = 5
+        
+        self.contentView.layer.borderWidth = 3.0
+        self.contentView.layer.borderColor = UIColor.lightGrayColor().CGColor
+        self.contentView.layer.masksToBounds = true
     }
 }
 
