@@ -124,7 +124,7 @@ class StudentAlbumViewCtrl: UIViewController,UICollectionViewDelegateFlowLayout,
                 else{
                     
                     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0), {
-                        UpdatePreviewData(data)
+                        UpdatePreviewData(data,Global.BasicContractName)
                         
                         dispatch_async(dispatch_get_main_queue(), {
                             PhotoCoreData.SaveCatchData(data)

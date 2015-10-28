@@ -144,13 +144,13 @@ func GetMyChildGroup(dsns:DsnsItem) -> [GroupItem]{
     return retVal
 }
 
-func UpdatePreviewData(data:PreviewData) -> Bool {
+func UpdatePreviewData(data:PreviewData,contract:String) -> Bool {
     
-    var con = GetCommonConnect(data.Dsns, Global.BasicContractName)
+    var con = GetCommonConnect(data.Dsns, contract)
     
     var err : DSFault!
     
-    var rsp = con.SendRequest("album.GetPreviewData", bodyContent: "<Request><Uid>\(data.Uid)</Uid></Request>", &err)
+    var rsp = con.SendRequest("main.GetPreviewData", bodyContent: "<Request><Uid>\(data.Uid)</Uid></Request>", &err)
     
     if rsp.isEmpty{
         return false

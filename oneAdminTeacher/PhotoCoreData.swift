@@ -66,7 +66,7 @@ class PhotoCoreDataClass{
         
     }
     
-    func UpdateCatchData(pd:PreviewData,detail:UIImage) {
+    func UpdateCatchData(pd:PreviewData,detail:UIImage?) {
         
         let fetchRequest = NSFetchRequest(entityName: "Photo")
         fetchRequest.predicate = NSPredicate(format: "dsns=%@ and group=%@ and uid=%@", pd.Dsns, pd.Group, pd.Uid)
@@ -76,9 +76,14 @@ class PhotoCoreDataClass{
                 
                 var managedObject = fetchResults[0]
                 
-                managedObject.setValue(detail, forKey: "detail")
+                if let img = detail{
+                    
+                    managedObject.setValue(img, forKey: "detail")
+                    
+                    self.mocMain.save(nil)
+                }
                 
-                self.mocMain.save(nil)
+                
             }
         }
     }
@@ -123,18 +128,18 @@ class PhotoCoreDataClass{
     }
     
     //Core Data using
-    //    func DeleteAll() {
-    //
-    //        let fetchRequest = NSFetchRequest(entityName: "Photo")
-    //
-    //        let results = managedObjectContext.executeFetchRequest(fetchRequest, error: nil) as! [NSManagedObject]
-    //
-    //        for obj in results {
-    //            managedObjectContext.deleteObject(obj)
-    //        }
-    //
-    //        managedObjectContext.save(nil)
-    //    }
+    func DeleteAll() {
+        
+        let fetchRequest = NSFetchRequest(entityName: "Photo")
+        
+        let results = self.mocMain.executeFetchRequest(fetchRequest, error: nil) as! [NSManagedObject]
+        
+        for obj in results {
+            self.mocMain.deleteObject(obj)
+        }
+        
+        self.mocMain.save(nil)
+    }
     
     //Core Data using
     //    func DeletePhoto(pd:PreviewData) {

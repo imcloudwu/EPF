@@ -122,9 +122,9 @@ class StudentDetailViewCtrl: UIViewController {
         }
         else if Segment.selectedSegmentIndex == 1{
             
-            let contentView = self.storyboard?.instantiateViewControllerWithIdentifier("TempPageViewCtrl") as! TempPageViewCtrl
+            let contentView = self.storyboard?.instantiateViewControllerWithIdentifier("FakerViewCtrl") as! FakerViewCtrl
             
-            contentView.SubText = "作品典藏頁面"
+            contentView.StudentData = StudentData
             
             ChangeContainerViewContent(contentView)
         }

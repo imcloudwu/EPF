@@ -68,6 +68,7 @@ class LastNewsViewCtrl: UIViewController,UITableViewDelegate,UITableViewDataSour
                 for group in groups{
                     
                     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0), {
+                        
                         var lnis = self.GetLastNewsItems(group)
                         
                         if lnis.count > 0{
@@ -120,7 +121,8 @@ class LastNewsViewCtrl: UIViewController,UITableViewDelegate,UITableViewDataSour
             }
             else{
                 dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0), {
-                    UpdatePreviewData(data.PreData)
+                    
+                    UpdatePreviewData(data.PreData,Global.BasicContractName)
                     
                     dispatch_async(dispatch_get_main_queue(), {
                         PhotoCoreData.SaveCatchData(data.PreData)

@@ -272,9 +272,9 @@ class PrepareViewCtrl: UIViewController {
                 
                 var gi = GroupItem(DSNS: dsns, GroupId: groupId, GroupName: groupName, IsTeacher: isTeacher)
                 
-                if !isStudent{
+                //if !isStudent{
                     retVal.append(gi)
-                }
+                //}
                 
             }
         }

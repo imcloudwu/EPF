@@ -101,7 +101,9 @@ class PhotoPageViewCtrl: UIViewController,UIScrollViewDelegate
         
         var retVal = ("",UIImage())
         
-        var con = GetCommonConnect(Base.Dsns, Global.TeacherContractName)
+        var contract = TeacherMode ? Global.TeacherContractName : Global.BasicContractName
+        
+        var con = GetCommonConnect(Base.Dsns, contract)
         
         var err : DSFault!
         

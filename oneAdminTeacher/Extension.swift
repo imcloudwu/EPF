@@ -174,13 +174,19 @@ extension NSDate {
         let min = Int(value / (60))
         let sec = Int(value)
         
-        if day > 3 {
-            let dateStr = "\(self)"
+//        if day > 3 {
+//            let dateStr = "\(self)"
+//            
+//            return dateStr.substringToIndex(advance(dateStr.startIndex, 10))
+//        }
+//        else if day > 0 {
+//            return "\(day) 天以前"
+//        }
+        if day > 0{
+            let format:NSDateFormatter = NSDateFormatter()
+            format.dateFormat = "yyyy/MM/dd"
             
-            return dateStr.substringToIndex(advance(dateStr.startIndex, 10))
-        }
-        else if day > 0 {
-            return "\(day) 天以前"
+            return format.stringFromDate(self)
         }
         else if hour > 0 {
             return "\(hour) 小時以前"
