@@ -65,34 +65,27 @@ class LastNewsViewCtrl: UIViewController,UITableViewDelegate,UITableViewDataSour
                 
                 var groups = GetMyChildGroup(dsns)
                 
-                for group in groups{
+                var lnis = self.GetLastNewsItems(dsns.AccessPoint,groups: groups)
+                
+                if lnis.count > 0{
                     
-                    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0), {
+                    dispatch_async(dispatch_get_main_queue(), {
                         
-                        var lnis = self.GetLastNewsItems(group)
+                        for lni in lnis{
+                            if !contains(lastNewItems, lni){
+                                lastNewItems.append(lni)
+                            }
+                        }
                         
-                        if lnis.count > 0{
+                        if lastNewItems.count > 0 {
                             
-                            dispatch_async(dispatch_get_main_queue(), {
-                                
-                                for lni in lnis{
-                                    if !contains(lastNewItems, lni){
-                                        lastNewItems.append(lni)
-                                    }
-                                }
-                                
-                                if lastNewItems.count > 0 {
-                                    
-                                    lastNewItems.sort({ $0.Date > $1.Date })
-                                    
-                                    self._LastNewItems = lastNewItems
-                                    
-                                    self.tableView.reloadData()
-                                }
-                            })
+                            lastNewItems.sort({ $0.Date > $1.Date })
+                            
+                            self._LastNewItems = lastNewItems
+                            
+                            self.tableView.reloadData()
                         }
                     })
-                    
                 }
             })
         }
@@ -151,18 +144,26 @@ class LastNewsViewCtrl: UIViewController,UITableViewDelegate,UITableViewDataSour
         
     }
     
-    func GetLastNewsItems(group:GroupItem) -> [LastNewItem]{
+    func GetLastNewsItems(dsns:String,groups:[GroupItem]) -> [LastNewItem]{
         
         let format:NSDateFormatter = NSDateFormatter()
         format.dateFormat = "yyyy-MM-dd HH:mm:ss.SSSSS"
         
+        var groupNames = [String:GroupItem]()
+        var request = ""
+        
+        for group in groups{
+            groupNames[group.GroupId] = group
+            request += "<RefGroupId>\(group.GroupId)</RefGroupId>"
+        }
+        
         var retVal = [LastNewItem]()
         
-        var con = GetCommonConnect(group.DSNS, Global.BasicContractName)
+        var con = GetCommonConnect(dsns, Global.BasicContractName)
         
         var err : DSFault!
         
-        var rsp = con.SendRequest("album.GetLastNewData", bodyContent: "<Request><RefGroupId>\(group.GroupId)</RefGroupId></Request>", &err)
+        var rsp = con.SendRequest("album.GetNews", bodyContent: "<Request>\(request)<Pagination><StartPage>1</StartPage><PageSize>20</PageSize></Pagination></Request>", &err)
         
         if rsp.isEmpty{
             return retVal
@@ -181,13 +182,14 @@ class LastNewsViewCtrl: UIViewController,UITableViewDelegate,UITableViewDataSour
                 
                 let uid = data["Uid"].stringValue
                 let comment = data["Comment"].stringValue
+                let groupId = data["RefGroupId"].stringValue
                 
                 let date = data["Date"].stringValue
                 let nsDate = format.dateFromString(date)
                 
-                let preData = PreviewData(dsns: group.DSNS, uid: uid, group: group.GroupId)
+                let preData = PreviewData(dsns: dsns, uid: uid, group: groupId)
                 
-                let lni = LastNewItem(preData: preData, groupData: group, date: nsDate!, comment: comment)
+                let lni = LastNewItem(preData: preData, groupData: groupNames[groupId]!, date: nsDate!, comment: comment)
                 
                 retVal.append(lni)
             }

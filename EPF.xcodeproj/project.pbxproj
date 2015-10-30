@@ -14,20 +14,6 @@
 		6100D0F81B86E62F005AEF65 /* iPad2-180.png in Resources */ = {isa = PBXBuildFile; fileRef = 6100D0F31B86E62F005AEF65 /* iPad2-180.png */; };
 		6101374A1BDF578F0036AE30 /* rocks_563659.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 610137491BDF578F0036AE30 /* rocks_563659.jpg */; };
 		6101374C1BDF7A170036AE30 /* FakerViewCtrl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6101374B1BDF7A170036AE30 /* FakerViewCtrl.swift */; };
-		6101375D1BDF7BC90036AE30 /* IMAG0256.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 6101374E1BDF7BC90036AE30 /* IMAG0256.jpg */; };
-		6101375E1BDF7BC90036AE30 /* IMAG0260.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 6101374F1BDF7BC90036AE30 /* IMAG0260.jpg */; };
-		6101375F1BDF7BC90036AE30 /* IMAG0262.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 610137501BDF7BC90036AE30 /* IMAG0262.jpg */; };
-		610137601BDF7BC90036AE30 /* IMAG0264.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 610137511BDF7BC90036AE30 /* IMAG0264.jpg */; };
-		610137611BDF7BC90036AE30 /* portfolio_01.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 610137531BDF7BC90036AE30 /* portfolio_01.jpg */; };
-		610137621BDF7BC90036AE30 /* portfolio_02.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 610137541BDF7BC90036AE30 /* portfolio_02.jpg */; };
-		610137631BDF7BC90036AE30 /* portfolio_03.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 610137551BDF7BC90036AE30 /* portfolio_03.jpg */; };
-		610137641BDF7BC90036AE30 /* portfolio_04.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 610137561BDF7BC90036AE30 /* portfolio_04.jpg */; };
-		610137651BDF7BC90036AE30 /* portfolio_05.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 610137571BDF7BC90036AE30 /* portfolio_05.jpg */; };
-		610137661BDF7BC90036AE30 /* portfolio_06.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 610137581BDF7BC90036AE30 /* portfolio_06.jpg */; };
-		610137671BDF7BC90036AE30 /* portfolio_08.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 610137591BDF7BC90036AE30 /* portfolio_08.jpg */; };
-		610137681BDF7BC90036AE30 /* portfolio_09.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 6101375A1BDF7BC90036AE30 /* portfolio_09.jpg */; };
-		610137691BDF7BC90036AE30 /* portfolio_11.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 6101375B1BDF7BC90036AE30 /* portfolio_11.jpg */; };
-		6101376A1BDF7BC90036AE30 /* portfolio_13.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 6101375C1BDF7BC90036AE30 /* portfolio_13.jpg */; };
 		6104420C1B44E9FC007D3C98 /* Search Property Filled-32.png in Resources */ = {isa = PBXBuildFile; fileRef = 6104420A1B44E9FC007D3C98 /* Search Property Filled-32.png */; };
 		61051F301B57463A00755ED5 /* background3.png in Resources */ = {isa = PBXBuildFile; fileRef = 61051F2D1B57463A00755ED5 /* background3.png */; };
 		61051F311B57463A00755ED5 /* background4.png in Resources */ = {isa = PBXBuildFile; fileRef = 61051F2E1B57463A00755ED5 /* background4.png */; };
@@ -42,7 +28,37 @@
 		610A7B6D1BD9CE98001B8332 /* Functions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 610A7B6C1BD9CE98001B8332 /* Functions.swift */; };
 		610A7B6F1BD9CF4D001B8332 /* LastNewsViewCtrl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 610A7B6E1BD9CF4D001B8332 /* LastNewsViewCtrl.swift */; };
 		610AC8481BC23845004FF6F4 /* top-of-the-world.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 610AC8471BC23845004FF6F4 /* top-of-the-world.jpg */; };
+		610B06F61BE1C4E000632308 /* 30121-1獎狀.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 610B06B51BE1C4E000632308 /* 30121-1獎狀.jpg */; };
+		610B06F71BE1C4E000632308 /* 30121-2獎狀.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 610B06B61BE1C4E000632308 /* 30121-2獎狀.jpg */; };
+		610B06F81BE1C4E000632308 /* 30121-3獎狀.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 610B06B71BE1C4E000632308 /* 30121-3獎狀.jpg */; };
+		610B06F91BE1C4E000632308 /* 30121-4獎狀.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 610B06B81BE1C4E000632308 /* 30121-4獎狀.jpg */; };
+		610B06FA1BE1C4E000632308 /* 30121-5獎狀.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 610B06B91BE1C4E000632308 /* 30121-5獎狀.jpg */; };
+		610B06FB1BE1C4E000632308 /* 30121-6獎狀.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 610B06BA1BE1C4E000632308 /* 30121-6獎狀.jpg */; };
+		610B06FF1BE1C4E000632308 /* 30121學習單1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 610B06BE1BE1C4E000632308 /* 30121學習單1.jpg */; };
+		610B07001BE1C4E000632308 /* 30121學習單2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 610B06BF1BE1C4E000632308 /* 30121學習單2.jpg */; };
+		610B07011BE1C4E000632308 /* 30121學習單3.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 610B06C01BE1C4E000632308 /* 30121學習單3.jpg */; };
+		610B07021BE1C4E000632308 /* 30121學習單4.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 610B06C11BE1C4E000632308 /* 30121學習單4.jpg */; };
+		610B07031BE1C4E000632308 /* 30121學習單5.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 610B06C21BE1C4E000632308 /* 30121學習單5.jpg */; };
+		610B07041BE1C4E000632308 /* 30121學習單6.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 610B06C31BE1C4E000632308 /* 30121學習單6.jpg */; };
+		610B07091BE1C4E000632308 /* 30121美勞畫像.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 610B06C81BE1C4E000632308 /* 30121美勞畫像.jpg */; };
+		610B070A1BE1C4E000632308 /* 30121美勞花瓶.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 610B06C91BE1C4E000632308 /* 30121美勞花瓶.jpg */; };
+		610B070B1BE1C4E000632308 /* 30121美勞蝴蝶.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 610B06CA1BE1C4E000632308 /* 30121美勞蝴蝶.jpg */; };
+		610B070C1BE1C4E000632308 /* 30121美勞魚.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 610B06CB1BE1C4E000632308 /* 30121美勞魚.jpg */; };
+		610B070D1BE1C4E000632308 /* 30121-作文12.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 610B06CD1BE1C4E000632308 /* 30121-作文12.jpg */; };
+		610B070E1BE1C4E000632308 /* 30121-作文13.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 610B06CE1BE1C4E000632308 /* 30121-作文13.jpg */; };
+		610B070F1BE1C4E000632308 /* 30121-作文14.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 610B06CF1BE1C4E000632308 /* 30121-作文14.jpg */; };
+		610B07101BE1C4E000632308 /* 30121-作文15.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 610B06D01BE1C4E000632308 /* 30121-作文15.jpg */; };
+		610B07111BE1C4E000632308 /* 30121-作文16.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 610B06D11BE1C4E000632308 /* 30121-作文16.jpg */; };
+		610B07121BE1C4E000632308 /* 30121-作文21.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 610B06D21BE1C4E000632308 /* 30121-作文21.jpg */; };
 		610B1A751B4CCCA400E3724D /* Paper Filled-50.png in Resources */ = {isa = PBXBuildFile; fileRef = 610B1A741B4CCCA400E3724D /* Paper Filled-50.png */; };
+		610C31F81BE302A400A1FC7F /* ScreenHunter.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 610C31F01BE302A400A1FC7F /* ScreenHunter.jpg */; };
+		610C31F91BE302A400A1FC7F /* 黃小悅健康管理全部.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 610C31F11BE302A400A1FC7F /* 黃小悅健康管理全部.jpg */; };
+		610C31FA1BE302A400A1FC7F /* 黃小悅健康資料.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 610C31F21BE302A400A1FC7F /* 黃小悅健康資料.jpg */; };
+		610C31FB1BE302A400A1FC7F /* 黃小悅身高曲線圖.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 610C31F31BE302A400A1FC7F /* 黃小悅身高曲線圖.jpg */; };
+		610C31FC1BE302A400A1FC7F /* 黃小悅體重曲線圖.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 610C31F41BE302A400A1FC7F /* 黃小悅體重曲線圖.jpg */; };
+		610C31FD1BE302A400A1FC7F /* 黃小翔健康資料.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 610C31F51BE302A400A1FC7F /* 黃小翔健康資料.jpg */; };
+		610C31FE1BE302A400A1FC7F /* 黃小翔身高曲線圖.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 610C31F61BE302A400A1FC7F /* 黃小翔身高曲線圖.jpg */; };
+		610C31FF1BE302A400A1FC7F /* 黃小翔體重曲線圖.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 610C31F71BE302A400A1FC7F /* 黃小翔體重曲線圖.jpg */; };
 		610C7EFD1B61E0B7001F7C4E /* KeyChain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 610C7EFC1B61E0B7001F7C4E /* KeyChain.swift */; };
 		610CB0921B5523E80051EC76 /* Age-25.png in Resources */ = {isa = PBXBuildFile; fileRef = 610CB0901B5523E80051EC76 /* Age-25.png */; };
 		610CB0931B5523E80051EC76 /* Edit Property-25.png in Resources */ = {isa = PBXBuildFile; fileRef = 610CB0911B5523E80051EC76 /* Edit Property-25.png */; };
@@ -73,6 +89,22 @@
 		613E8B0D1B9436930020228E /* Cash Register Filled-32.png in Resources */ = {isa = PBXBuildFile; fileRef = 613E8B0C1B9436930020228E /* Cash Register Filled-32.png */; };
 		613E8B0F1B94375C0020228E /* Coins-50.png in Resources */ = {isa = PBXBuildFile; fileRef = 613E8B0E1B94375C0020228E /* Coins-50.png */; };
 		613E8B111B943C4A0020228E /* PaymentViewCtrl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 613E8B101B943C4A0020228E /* PaymentViewCtrl.swift */; };
+		614788331BE20012005F48E9 /* 30124國語考券1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 614788241BE20012005F48E9 /* 30124國語考券1.jpg */; };
+		614788341BE20012005F48E9 /* 30124國語考券2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 614788251BE20012005F48E9 /* 30124國語考券2.jpg */; };
+		614788351BE20012005F48E9 /* 30124學習單4.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 614788261BE20012005F48E9 /* 30124學習單4.jpg */; };
+		614788361BE20012005F48E9 /* 30124學習單5.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 614788271BE20012005F48E9 /* 30124學習單5.jpg */; };
+		614788371BE20012005F48E9 /* 30124學習單7.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 614788281BE20012005F48E9 /* 30124學習單7.jpg */; };
+		614788381BE20012005F48E9 /* 30124數學考券1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 614788291BE20012005F48E9 /* 30124數學考券1.jpg */; };
+		614788391BE20012005F48E9 /* 30124獎狀1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 6147882A1BE20012005F48E9 /* 30124獎狀1.jpg */; };
+		6147883A1BE20012005F48E9 /* 30124獎狀2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 6147882B1BE20012005F48E9 /* 30124獎狀2.jpg */; };
+		6147883B1BE20012005F48E9 /* 30124獎狀3.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 6147882C1BE20012005F48E9 /* 30124獎狀3.jpg */; };
+		6147883F1BE20012005F48E9 /* 30124美勞1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 614788301BE20012005F48E9 /* 30124美勞1.jpg */; };
+		614788401BE20012005F48E9 /* 30124美勞2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 614788311BE20012005F48E9 /* 30124美勞2.jpg */; };
+		614788411BE20012005F48E9 /* 30124美勞3.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 614788321BE20012005F48E9 /* 30124美勞3.jpg */; };
+		614788461BE21414005F48E9 /* 黃小悅身高圖.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 614788421BE21414005F48E9 /* 黃小悅身高圖.jpg */; };
+		614788471BE21414005F48E9 /* 黃小悅體重圖.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 614788431BE21414005F48E9 /* 黃小悅體重圖.jpg */; };
+		614788481BE21414005F48E9 /* 黃小翔身高圖.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 614788441BE21414005F48E9 /* 黃小翔身高圖.jpg */; };
+		614788491BE21414005F48E9 /* 黃小翔體重圖.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 614788451BE21414005F48E9 /* 黃小翔體重圖.jpg */; };
 		6149647C1BCB926B004B305C /* PhotoDetailViewCtrl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6149647B1BCB926B004B305C /* PhotoDetailViewCtrl.swift */; };
 		614E45AC1B96CAD600DFE1F9 /* IAPManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 614E45AB1B96CAD600DFE1F9 /* IAPManager.swift */; };
 		615BB2581B3BD47F00864052 /* DSUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 615BB2571B3BD47F00864052 /* DSUtil.swift */; };
@@ -88,7 +120,6 @@
 		6173AAD51B5797920049EB63 /* sidebackground.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 6173AAD41B5797920049EB63 /* sidebackground.jpg */; };
 		6173AAD71B57A9930049EB63 /* DisplayViewCtrl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6173AAD61B57A9930049EB63 /* DisplayViewCtrl.swift */; };
 		61763E3A1B2ECD3A004A0DCD /* oneAdminTeacher.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 61763E381B2ECD3A004A0DCD /* oneAdminTeacher.xcdatamodeld */; };
-		617ABABF1BC278310008C25C /* mass_background.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 617ABABE1BC278310008C25C /* mass_background.jpg */; };
 		617ABAC11BC27CD30008C25C /* sidemenu_background.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 617ABAC01BC27CD30008C25C /* sidemenu_background.jpg */; };
 		617F32311B60F90100A03CD6 /* Message Filled-50.png in Resources */ = {isa = PBXBuildFile; fileRef = 617F32301B60F90100A03CD6 /* Message Filled-50.png */; };
 		6189CFA71B3D43B00098AAD7 /* SchoolOptionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6189CFA61B3D43B00098AAD7 /* SchoolOptionsView.swift */; };
@@ -175,22 +206,6 @@
 		61F550951B2A768900E26A5D /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 61F550931B2A768900E26A5D /* LaunchScreen.xib */; };
 		61F550A11B2A768900E26A5D /* oneAdminTeacherTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61F550A01B2A768900E26A5D /* oneAdminTeacherTests.swift */; };
 		61F550B01B2A7F5400E26A5D /* StudentViewCtrl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61F550AF1B2A7F5400E26A5D /* StudentViewCtrl.swift */; };
-		61FCA0331BE06A5F005EBCA7 /* b1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 61FCA0201BE06A5F005EBCA7 /* b1.jpg */; };
-		61FCA0341BE06A5F005EBCA7 /* b2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 61FCA0211BE06A5F005EBCA7 /* b2.jpg */; };
-		61FCA0351BE06A5F005EBCA7 /* b3.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 61FCA0221BE06A5F005EBCA7 /* b3.jpg */; };
-		61FCA0361BE06A5F005EBCA7 /* b4.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 61FCA0231BE06A5F005EBCA7 /* b4.jpg */; };
-		61FCA0371BE06A5F005EBCA7 /* c1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 61FCA0251BE06A5F005EBCA7 /* c1.jpg */; };
-		61FCA0381BE06A5F005EBCA7 /* c2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 61FCA0261BE06A5F005EBCA7 /* c2.jpg */; };
-		61FCA0391BE06A5F005EBCA7 /* c3.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 61FCA0271BE06A5F005EBCA7 /* c3.jpg */; };
-		61FCA03A1BE06A5F005EBCA7 /* c4.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 61FCA0281BE06A5F005EBCA7 /* c4.jpg */; };
-		61FCA03B1BE06A5F005EBCA7 /* d1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 61FCA02A1BE06A5F005EBCA7 /* d1.jpg */; };
-		61FCA03C1BE06A5F005EBCA7 /* d2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 61FCA02B1BE06A5F005EBCA7 /* d2.jpg */; };
-		61FCA03D1BE06A5F005EBCA7 /* d3.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 61FCA02C1BE06A5F005EBCA7 /* d3.jpg */; };
-		61FCA03E1BE06A5F005EBCA7 /* d4.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 61FCA02D1BE06A5F005EBCA7 /* d4.jpg */; };
-		61FCA03F1BE06A5F005EBCA7 /* a1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 61FCA02F1BE06A5F005EBCA7 /* a1.jpg */; };
-		61FCA0401BE06A5F005EBCA7 /* a2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 61FCA0301BE06A5F005EBCA7 /* a2.jpg */; };
-		61FCA0411BE06A5F005EBCA7 /* a3.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 61FCA0311BE06A5F005EBCA7 /* a3.jpg */; };
-		61FCA0421BE06A5F005EBCA7 /* a4.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 61FCA0321BE06A5F005EBCA7 /* a4.jpg */; };
 		61FCA0441BE083BA005EBCA7 /* TempPageViewCtrl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61FCA0431BE083BA005EBCA7 /* TempPageViewCtrl.swift */; };
 		61FE92E41B58B8BA003BABFE /* Down 4-25.png in Resources */ = {isa = PBXBuildFile; fileRef = 61FE92E21B58B8BA003BABFE /* Down 4-25.png */; };
 		61FE92E51B58B8BA003BABFE /* Up 4-25.png in Resources */ = {isa = PBXBuildFile; fileRef = 61FE92E31B58B8BA003BABFE /* Up 4-25.png */; };
@@ -215,20 +230,6 @@
 		6100D0F31B86E62F005AEF65 /* iPad2-180.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "iPad2-180.png"; path = "icon/sizes/iPad2-180.png"; sourceTree = SOURCE_ROOT; };
 		610137491BDF578F0036AE30 /* rocks_563659.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = rocks_563659.jpg; path = image/rocks_563659.jpg; sourceTree = SOURCE_ROOT; };
 		6101374B1BDF7A170036AE30 /* FakerViewCtrl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FakerViewCtrl.swift; sourceTree = "<group>"; };
-		6101374E1BDF7BC90036AE30 /* IMAG0256.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = IMAG0256.jpg; sourceTree = "<group>"; };
-		6101374F1BDF7BC90036AE30 /* IMAG0260.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = IMAG0260.jpg; sourceTree = "<group>"; };
-		610137501BDF7BC90036AE30 /* IMAG0262.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = IMAG0262.jpg; sourceTree = "<group>"; };
-		610137511BDF7BC90036AE30 /* IMAG0264.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = IMAG0264.jpg; sourceTree = "<group>"; };
-		610137531BDF7BC90036AE30 /* portfolio_01.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = portfolio_01.jpg; sourceTree = "<group>"; };
-		610137541BDF7BC90036AE30 /* portfolio_02.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = portfolio_02.jpg; sourceTree = "<group>"; };
-		610137551BDF7BC90036AE30 /* portfolio_03.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = portfolio_03.jpg; sourceTree = "<group>"; };
-		610137561BDF7BC90036AE30 /* portfolio_04.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = portfolio_04.jpg; sourceTree = "<group>"; };
-		610137571BDF7BC90036AE30 /* portfolio_05.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = portfolio_05.jpg; sourceTree = "<group>"; };
-		610137581BDF7BC90036AE30 /* portfolio_06.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = portfolio_06.jpg; sourceTree = "<group>"; };
-		610137591BDF7BC90036AE30 /* portfolio_08.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = portfolio_08.jpg; sourceTree = "<group>"; };
-		6101375A1BDF7BC90036AE30 /* portfolio_09.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = portfolio_09.jpg; sourceTree = "<group>"; };
-		6101375B1BDF7BC90036AE30 /* portfolio_11.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = portfolio_11.jpg; sourceTree = "<group>"; };
-		6101375C1BDF7BC90036AE30 /* portfolio_13.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = portfolio_13.jpg; sourceTree = "<group>"; };
 		6104420A1B44E9FC007D3C98 /* Search Property Filled-32.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Search Property Filled-32.png"; path = "icon/Search Property Filled-32.png"; sourceTree = SOURCE_ROOT; };
 		61051F2D1B57463A00755ED5 /* background3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = background3.png; path = image/background3.png; sourceTree = SOURCE_ROOT; };
 		61051F2E1B57463A00755ED5 /* background4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = background4.png; path = image/background4.png; sourceTree = SOURCE_ROOT; };
@@ -243,7 +244,37 @@
 		610A7B6C1BD9CE98001B8332 /* Functions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Functions.swift; sourceTree = "<group>"; };
 		610A7B6E1BD9CF4D001B8332 /* LastNewsViewCtrl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LastNewsViewCtrl.swift; sourceTree = "<group>"; };
 		610AC8471BC23845004FF6F4 /* top-of-the-world.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "top-of-the-world.jpg"; path = "image/top-of-the-world.jpg"; sourceTree = SOURCE_ROOT; };
+		610B06B51BE1C4E000632308 /* 30121-1獎狀.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "30121-1獎狀.jpg"; sourceTree = "<group>"; };
+		610B06B61BE1C4E000632308 /* 30121-2獎狀.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "30121-2獎狀.jpg"; sourceTree = "<group>"; };
+		610B06B71BE1C4E000632308 /* 30121-3獎狀.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "30121-3獎狀.jpg"; sourceTree = "<group>"; };
+		610B06B81BE1C4E000632308 /* 30121-4獎狀.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "30121-4獎狀.jpg"; sourceTree = "<group>"; };
+		610B06B91BE1C4E000632308 /* 30121-5獎狀.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "30121-5獎狀.jpg"; sourceTree = "<group>"; };
+		610B06BA1BE1C4E000632308 /* 30121-6獎狀.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "30121-6獎狀.jpg"; sourceTree = "<group>"; };
+		610B06BE1BE1C4E000632308 /* 30121學習單1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "30121學習單1.jpg"; sourceTree = "<group>"; };
+		610B06BF1BE1C4E000632308 /* 30121學習單2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "30121學習單2.jpg"; sourceTree = "<group>"; };
+		610B06C01BE1C4E000632308 /* 30121學習單3.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "30121學習單3.jpg"; sourceTree = "<group>"; };
+		610B06C11BE1C4E000632308 /* 30121學習單4.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "30121學習單4.jpg"; sourceTree = "<group>"; };
+		610B06C21BE1C4E000632308 /* 30121學習單5.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "30121學習單5.jpg"; sourceTree = "<group>"; };
+		610B06C31BE1C4E000632308 /* 30121學習單6.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "30121學習單6.jpg"; sourceTree = "<group>"; };
+		610B06C81BE1C4E000632308 /* 30121美勞畫像.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "30121美勞畫像.jpg"; sourceTree = "<group>"; };
+		610B06C91BE1C4E000632308 /* 30121美勞花瓶.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "30121美勞花瓶.jpg"; sourceTree = "<group>"; };
+		610B06CA1BE1C4E000632308 /* 30121美勞蝴蝶.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "30121美勞蝴蝶.jpg"; sourceTree = "<group>"; };
+		610B06CB1BE1C4E000632308 /* 30121美勞魚.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "30121美勞魚.jpg"; sourceTree = "<group>"; };
+		610B06CD1BE1C4E000632308 /* 30121-作文12.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "30121-作文12.jpg"; sourceTree = "<group>"; };
+		610B06CE1BE1C4E000632308 /* 30121-作文13.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "30121-作文13.jpg"; sourceTree = "<group>"; };
+		610B06CF1BE1C4E000632308 /* 30121-作文14.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "30121-作文14.jpg"; sourceTree = "<group>"; };
+		610B06D01BE1C4E000632308 /* 30121-作文15.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "30121-作文15.jpg"; sourceTree = "<group>"; };
+		610B06D11BE1C4E000632308 /* 30121-作文16.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "30121-作文16.jpg"; sourceTree = "<group>"; };
+		610B06D21BE1C4E000632308 /* 30121-作文21.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "30121-作文21.jpg"; sourceTree = "<group>"; };
 		610B1A741B4CCCA400E3724D /* Paper Filled-50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Paper Filled-50.png"; path = "icon/Paper Filled-50.png"; sourceTree = SOURCE_ROOT; };
+		610C31F01BE302A400A1FC7F /* ScreenHunter.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = ScreenHunter.jpg; path = image/ScreenHunter.jpg; sourceTree = SOURCE_ROOT; };
+		610C31F11BE302A400A1FC7F /* 黃小悅健康管理全部.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "黃小悅健康管理全部.jpg"; path = "image/黃小悅健康管理全部.jpg"; sourceTree = SOURCE_ROOT; };
+		610C31F21BE302A400A1FC7F /* 黃小悅健康資料.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "黃小悅健康資料.jpg"; path = "image/黃小悅健康資料.jpg"; sourceTree = SOURCE_ROOT; };
+		610C31F31BE302A400A1FC7F /* 黃小悅身高曲線圖.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "黃小悅身高曲線圖.jpg"; path = "image/黃小悅身高曲線圖.jpg"; sourceTree = SOURCE_ROOT; };
+		610C31F41BE302A400A1FC7F /* 黃小悅體重曲線圖.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "黃小悅體重曲線圖.jpg"; path = "image/黃小悅體重曲線圖.jpg"; sourceTree = SOURCE_ROOT; };
+		610C31F51BE302A400A1FC7F /* 黃小翔健康資料.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "黃小翔健康資料.jpg"; path = "image/黃小翔健康資料.jpg"; sourceTree = SOURCE_ROOT; };
+		610C31F61BE302A400A1FC7F /* 黃小翔身高曲線圖.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "黃小翔身高曲線圖.jpg"; path = "image/黃小翔身高曲線圖.jpg"; sourceTree = SOURCE_ROOT; };
+		610C31F71BE302A400A1FC7F /* 黃小翔體重曲線圖.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "黃小翔體重曲線圖.jpg"; path = "image/黃小翔體重曲線圖.jpg"; sourceTree = SOURCE_ROOT; };
 		610C7EFC1B61E0B7001F7C4E /* KeyChain.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = KeyChain.swift; path = oneAdminTeacher/KeyChain.swift; sourceTree = "<group>"; };
 		610CB0901B5523E80051EC76 /* Age-25.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Age-25.png"; path = "icon/Age-25.png"; sourceTree = SOURCE_ROOT; };
 		610CB0911B5523E80051EC76 /* Edit Property-25.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Edit Property-25.png"; path = "icon/Edit Property-25.png"; sourceTree = SOURCE_ROOT; };
@@ -274,6 +305,22 @@
 		613E8B0C1B9436930020228E /* Cash Register Filled-32.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Cash Register Filled-32.png"; path = "icon/Cash Register Filled-32.png"; sourceTree = SOURCE_ROOT; };
 		613E8B0E1B94375C0020228E /* Coins-50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Coins-50.png"; path = "icon/Coins-50.png"; sourceTree = SOURCE_ROOT; };
 		613E8B101B943C4A0020228E /* PaymentViewCtrl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PaymentViewCtrl.swift; sourceTree = "<group>"; };
+		614788241BE20012005F48E9 /* 30124國語考券1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "30124國語考券1.jpg"; sourceTree = "<group>"; };
+		614788251BE20012005F48E9 /* 30124國語考券2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "30124國語考券2.jpg"; sourceTree = "<group>"; };
+		614788261BE20012005F48E9 /* 30124學習單4.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "30124學習單4.jpg"; sourceTree = "<group>"; };
+		614788271BE20012005F48E9 /* 30124學習單5.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "30124學習單5.jpg"; sourceTree = "<group>"; };
+		614788281BE20012005F48E9 /* 30124學習單7.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "30124學習單7.jpg"; sourceTree = "<group>"; };
+		614788291BE20012005F48E9 /* 30124數學考券1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "30124數學考券1.jpg"; sourceTree = "<group>"; };
+		6147882A1BE20012005F48E9 /* 30124獎狀1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "30124獎狀1.jpg"; sourceTree = "<group>"; };
+		6147882B1BE20012005F48E9 /* 30124獎狀2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "30124獎狀2.jpg"; sourceTree = "<group>"; };
+		6147882C1BE20012005F48E9 /* 30124獎狀3.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "30124獎狀3.jpg"; sourceTree = "<group>"; };
+		614788301BE20012005F48E9 /* 30124美勞1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "30124美勞1.jpg"; sourceTree = "<group>"; };
+		614788311BE20012005F48E9 /* 30124美勞2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "30124美勞2.jpg"; sourceTree = "<group>"; };
+		614788321BE20012005F48E9 /* 30124美勞3.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "30124美勞3.jpg"; sourceTree = "<group>"; };
+		614788421BE21414005F48E9 /* 黃小悅身高圖.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "黃小悅身高圖.jpg"; path = "image/黃小悅身高圖.jpg"; sourceTree = SOURCE_ROOT; };
+		614788431BE21414005F48E9 /* 黃小悅體重圖.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "黃小悅體重圖.jpg"; path = "image/黃小悅體重圖.jpg"; sourceTree = SOURCE_ROOT; };
+		614788441BE21414005F48E9 /* 黃小翔身高圖.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "黃小翔身高圖.jpg"; path = "image/黃小翔身高圖.jpg"; sourceTree = SOURCE_ROOT; };
+		614788451BE21414005F48E9 /* 黃小翔體重圖.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "黃小翔體重圖.jpg"; path = "image/黃小翔體重圖.jpg"; sourceTree = SOURCE_ROOT; };
 		6149647B1BCB926B004B305C /* PhotoDetailViewCtrl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoDetailViewCtrl.swift; sourceTree = "<group>"; };
 		614E45AB1B96CAD600DFE1F9 /* IAPManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IAPManager.swift; sourceTree = "<group>"; };
 		615BB2571B3BD47F00864052 /* DSUtil.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DSUtil.swift; sourceTree = "<group>"; };
@@ -289,7 +336,6 @@
 		6173AAD41B5797920049EB63 /* sidebackground.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = sidebackground.jpg; path = image/sidebackground.jpg; sourceTree = SOURCE_ROOT; };
 		6173AAD61B57A9930049EB63 /* DisplayViewCtrl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DisplayViewCtrl.swift; sourceTree = "<group>"; };
 		61763E391B2ECD3A004A0DCD /* oneAdminTeacher.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = oneAdminTeacher.xcdatamodel; sourceTree = "<group>"; };
-		617ABABE1BC278310008C25C /* mass_background.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = mass_background.jpg; path = image/mass_background.jpg; sourceTree = SOURCE_ROOT; };
 		617ABAC01BC27CD30008C25C /* sidemenu_background.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = sidemenu_background.jpg; path = image/sidemenu_background.jpg; sourceTree = SOURCE_ROOT; };
 		617F32301B60F90100A03CD6 /* Message Filled-50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Message Filled-50.png"; path = "icon/Message Filled-50.png"; sourceTree = SOURCE_ROOT; };
 		6189CFA61B3D43B00098AAD7 /* SchoolOptionsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SchoolOptionsView.swift; sourceTree = "<group>"; };
@@ -396,22 +442,6 @@
 		61F5509F1B2A768900E26A5D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		61F550A01B2A768900E26A5D /* oneAdminTeacherTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = oneAdminTeacherTests.swift; sourceTree = "<group>"; };
 		61F550AF1B2A7F5400E26A5D /* StudentViewCtrl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StudentViewCtrl.swift; sourceTree = "<group>"; };
-		61FCA0201BE06A5F005EBCA7 /* b1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = b1.jpg; sourceTree = "<group>"; };
-		61FCA0211BE06A5F005EBCA7 /* b2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = b2.jpg; sourceTree = "<group>"; };
-		61FCA0221BE06A5F005EBCA7 /* b3.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = b3.jpg; sourceTree = "<group>"; };
-		61FCA0231BE06A5F005EBCA7 /* b4.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = b4.jpg; sourceTree = "<group>"; };
-		61FCA0251BE06A5F005EBCA7 /* c1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = c1.jpg; sourceTree = "<group>"; };
-		61FCA0261BE06A5F005EBCA7 /* c2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = c2.jpg; sourceTree = "<group>"; };
-		61FCA0271BE06A5F005EBCA7 /* c3.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = c3.jpg; sourceTree = "<group>"; };
-		61FCA0281BE06A5F005EBCA7 /* c4.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = c4.jpg; sourceTree = "<group>"; };
-		61FCA02A1BE06A5F005EBCA7 /* d1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = d1.jpg; sourceTree = "<group>"; };
-		61FCA02B1BE06A5F005EBCA7 /* d2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = d2.jpg; sourceTree = "<group>"; };
-		61FCA02C1BE06A5F005EBCA7 /* d3.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = d3.jpg; sourceTree = "<group>"; };
-		61FCA02D1BE06A5F005EBCA7 /* d4.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = d4.jpg; sourceTree = "<group>"; };
-		61FCA02F1BE06A5F005EBCA7 /* a1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = a1.jpg; sourceTree = "<group>"; };
-		61FCA0301BE06A5F005EBCA7 /* a2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = a2.jpg; sourceTree = "<group>"; };
-		61FCA0311BE06A5F005EBCA7 /* a3.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = a3.jpg; sourceTree = "<group>"; };
-		61FCA0321BE06A5F005EBCA7 /* a4.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = a4.jpg; sourceTree = "<group>"; };
 		61FCA0431BE083BA005EBCA7 /* TempPageViewCtrl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TempPageViewCtrl.swift; sourceTree = "<group>"; };
 		61FE92E21B58B8BA003BABFE /* Down 4-25.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Down 4-25.png"; path = "icon/Down 4-25.png"; sourceTree = SOURCE_ROOT; };
 		61FE92E31B58B8BA003BABFE /* Up 4-25.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Up 4-25.png"; path = "icon/Up 4-25.png"; sourceTree = SOURCE_ROOT; };
@@ -446,34 +476,62 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		6101374D1BDF7BC90036AE30 /* 11 */ = {
+		610B06B41BE1C4E000632308 /* 21 */ = {
 			isa = PBXGroup;
 			children = (
-				6101374E1BDF7BC90036AE30 /* IMAG0256.jpg */,
-				6101374F1BDF7BC90036AE30 /* IMAG0260.jpg */,
-				610137501BDF7BC90036AE30 /* IMAG0262.jpg */,
-				610137511BDF7BC90036AE30 /* IMAG0264.jpg */,
+				610B06B51BE1C4E000632308 /* 30121-1獎狀.jpg */,
+				610B06B61BE1C4E000632308 /* 30121-2獎狀.jpg */,
+				610B06B71BE1C4E000632308 /* 30121-3獎狀.jpg */,
+				610B06B81BE1C4E000632308 /* 30121-4獎狀.jpg */,
+				610B06B91BE1C4E000632308 /* 30121-5獎狀.jpg */,
+				610B06BA1BE1C4E000632308 /* 30121-6獎狀.jpg */,
+				610B06BE1BE1C4E000632308 /* 30121學習單1.jpg */,
+				610B06BF1BE1C4E000632308 /* 30121學習單2.jpg */,
+				610B06C01BE1C4E000632308 /* 30121學習單3.jpg */,
+				610B06C11BE1C4E000632308 /* 30121學習單4.jpg */,
+				610B06C21BE1C4E000632308 /* 30121學習單5.jpg */,
+				610B06C31BE1C4E000632308 /* 30121學習單6.jpg */,
+				610B06C81BE1C4E000632308 /* 30121美勞畫像.jpg */,
+				610B06C91BE1C4E000632308 /* 30121美勞花瓶.jpg */,
+				610B06CA1BE1C4E000632308 /* 30121美勞蝴蝶.jpg */,
+				610B06CB1BE1C4E000632308 /* 30121美勞魚.jpg */,
+				610B06CC1BE1C4E000632308 /* new */,
 			);
-			name = 11;
-			path = image/11;
+			name = 21;
+			path = image/21;
 			sourceTree = SOURCE_ROOT;
 		};
-		610137521BDF7BC90036AE30 /* 22 */ = {
+		610B06CC1BE1C4E000632308 /* new */ = {
 			isa = PBXGroup;
 			children = (
-				610137531BDF7BC90036AE30 /* portfolio_01.jpg */,
-				610137541BDF7BC90036AE30 /* portfolio_02.jpg */,
-				610137551BDF7BC90036AE30 /* portfolio_03.jpg */,
-				610137561BDF7BC90036AE30 /* portfolio_04.jpg */,
-				610137571BDF7BC90036AE30 /* portfolio_05.jpg */,
-				610137581BDF7BC90036AE30 /* portfolio_06.jpg */,
-				610137591BDF7BC90036AE30 /* portfolio_08.jpg */,
-				6101375A1BDF7BC90036AE30 /* portfolio_09.jpg */,
-				6101375B1BDF7BC90036AE30 /* portfolio_11.jpg */,
-				6101375C1BDF7BC90036AE30 /* portfolio_13.jpg */,
+				610B06CD1BE1C4E000632308 /* 30121-作文12.jpg */,
+				610B06CE1BE1C4E000632308 /* 30121-作文13.jpg */,
+				610B06CF1BE1C4E000632308 /* 30121-作文14.jpg */,
+				610B06D01BE1C4E000632308 /* 30121-作文15.jpg */,
+				610B06D11BE1C4E000632308 /* 30121-作文16.jpg */,
+				610B06D21BE1C4E000632308 /* 30121-作文21.jpg */,
 			);
-			name = 22;
-			path = image/22;
+			path = new;
+			sourceTree = "<group>";
+		};
+		614788231BE20012005F48E9 /* 黃小翔作品 */ = {
+			isa = PBXGroup;
+			children = (
+				614788241BE20012005F48E9 /* 30124國語考券1.jpg */,
+				614788251BE20012005F48E9 /* 30124國語考券2.jpg */,
+				614788261BE20012005F48E9 /* 30124學習單4.jpg */,
+				614788271BE20012005F48E9 /* 30124學習單5.jpg */,
+				614788281BE20012005F48E9 /* 30124學習單7.jpg */,
+				614788291BE20012005F48E9 /* 30124數學考券1.jpg */,
+				6147882A1BE20012005F48E9 /* 30124獎狀1.jpg */,
+				6147882B1BE20012005F48E9 /* 30124獎狀2.jpg */,
+				6147882C1BE20012005F48E9 /* 30124獎狀3.jpg */,
+				614788301BE20012005F48E9 /* 30124美勞1.jpg */,
+				614788311BE20012005F48E9 /* 30124美勞2.jpg */,
+				614788321BE20012005F48E9 /* 30124美勞3.jpg */,
+			);
+			name = "黃小翔作品";
+			path = "image/黃小翔作品";
 			sourceTree = SOURCE_ROOT;
 		};
 		618BF7961BCBA2C80065203E /* ELCImagePicker */ = {
@@ -760,18 +818,25 @@
 		61F550AE1B2A7A8E00E26A5D /* image */ = {
 			isa = PBXGroup;
 			children = (
-				61FCA01F1BE06A5F005EBCA7 /* 學習單 */,
-				61FCA0241BE06A5F005EBCA7 /* 獎狀 */,
-				61FCA0291BE06A5F005EBCA7 /* 考券 */,
-				61FCA02E1BE06A5F005EBCA7 /* 美勞作品 */,
-				6101374D1BDF7BC90036AE30 /* 11 */,
-				610137521BDF7BC90036AE30 /* 22 */,
+				610C31F01BE302A400A1FC7F /* ScreenHunter.jpg */,
+				610C31F11BE302A400A1FC7F /* 黃小悅健康管理全部.jpg */,
+				610C31F21BE302A400A1FC7F /* 黃小悅健康資料.jpg */,
+				610C31F31BE302A400A1FC7F /* 黃小悅身高曲線圖.jpg */,
+				610C31F41BE302A400A1FC7F /* 黃小悅體重曲線圖.jpg */,
+				610C31F51BE302A400A1FC7F /* 黃小翔健康資料.jpg */,
+				610C31F61BE302A400A1FC7F /* 黃小翔身高曲線圖.jpg */,
+				610C31F71BE302A400A1FC7F /* 黃小翔體重曲線圖.jpg */,
+				614788421BE21414005F48E9 /* 黃小悅身高圖.jpg */,
+				614788431BE21414005F48E9 /* 黃小悅體重圖.jpg */,
+				614788441BE21414005F48E9 /* 黃小翔身高圖.jpg */,
+				614788451BE21414005F48E9 /* 黃小翔體重圖.jpg */,
+				614788231BE20012005F48E9 /* 黃小翔作品 */,
+				610B06B41BE1C4E000632308 /* 21 */,
 				610137491BDF578F0036AE30 /* rocks_563659.jpg */,
 				618F5EBF1BD770B3003C4D59 /* ddd.jpg */,
 				618F5EBD1BD76FD0003C4D59 /* ccc.jpg */,
 				61DA54B11BD740D30095D279 /* bbb.jpg */,
 				617ABAC01BC27CD30008C25C /* sidemenu_background.jpg */,
-				617ABABE1BC278310008C25C /* mass_background.jpg */,
 				610AC8471BC23845004FF6F4 /* top-of-the-world.jpg */,
 				610882C51B8C0A9700CEBBE5 /* childBackground.jpg */,
 				6105322D1B8ACC290003C936 /* shutterstock_196751174.jpg */,
@@ -785,54 +850,6 @@
 			);
 			name = image;
 			sourceTree = "<group>";
-		};
-		61FCA01F1BE06A5F005EBCA7 /* 學習單 */ = {
-			isa = PBXGroup;
-			children = (
-				61FCA0201BE06A5F005EBCA7 /* b1.jpg */,
-				61FCA0211BE06A5F005EBCA7 /* b2.jpg */,
-				61FCA0221BE06A5F005EBCA7 /* b3.jpg */,
-				61FCA0231BE06A5F005EBCA7 /* b4.jpg */,
-			);
-			name = "學習單";
-			path = "image/學習單";
-			sourceTree = SOURCE_ROOT;
-		};
-		61FCA0241BE06A5F005EBCA7 /* 獎狀 */ = {
-			isa = PBXGroup;
-			children = (
-				61FCA0251BE06A5F005EBCA7 /* c1.jpg */,
-				61FCA0261BE06A5F005EBCA7 /* c2.jpg */,
-				61FCA0271BE06A5F005EBCA7 /* c3.jpg */,
-				61FCA0281BE06A5F005EBCA7 /* c4.jpg */,
-			);
-			name = "獎狀";
-			path = "image/獎狀";
-			sourceTree = SOURCE_ROOT;
-		};
-		61FCA0291BE06A5F005EBCA7 /* 考券 */ = {
-			isa = PBXGroup;
-			children = (
-				61FCA02A1BE06A5F005EBCA7 /* d1.jpg */,
-				61FCA02B1BE06A5F005EBCA7 /* d2.jpg */,
-				61FCA02C1BE06A5F005EBCA7 /* d3.jpg */,
-				61FCA02D1BE06A5F005EBCA7 /* d4.jpg */,
-			);
-			name = "考券";
-			path = "image/考券";
-			sourceTree = SOURCE_ROOT;
-		};
-		61FCA02E1BE06A5F005EBCA7 /* 美勞作品 */ = {
-			isa = PBXGroup;
-			children = (
-				61FCA02F1BE06A5F005EBCA7 /* a1.jpg */,
-				61FCA0301BE06A5F005EBCA7 /* a2.jpg */,
-				61FCA0311BE06A5F005EBCA7 /* a3.jpg */,
-				61FCA0321BE06A5F005EBCA7 /* a4.jpg */,
-			);
-			name = "美勞作品";
-			path = "image/美勞作品";
-			sourceTree = SOURCE_ROOT;
 		};
 /* End PBXGroup section */
 
@@ -923,105 +940,120 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				61FCA0351BE06A5F005EBCA7 /* b3.jpg in Resources */,
 				61051F301B57463A00755ED5 /* background3.png in Resources */,
 				6114C8FE1B43A2A800C73E5E /* Courses-32.png in Resources */,
 				617ABAC11BC27CD30008C25C /* sidemenu_background.jpg in Resources */,
 				61E9D7111B566C0600D36552 /* background2.png in Resources */,
-				610137671BDF7BC90036AE30 /* portfolio_08.jpg in Resources */,
 				6100D0F81B86E62F005AEF65 /* iPad2-180.png in Resources */,
 				613E8B0D1B9436930020228E /* Cash Register Filled-32.png in Resources */,
-				6101375D1BDF7BC90036AE30 /* IMAG0256.jpg in Resources */,
+				610B07031BE1C4E000632308 /* 30121學習單5.jpg in Resources */,
 				61E5747A1B85C03C00D2BD21 /* Menu 2-26.png in Resources */,
 				6104420C1B44E9FC007D3C98 /* Search Property Filled-32.png in Resources */,
-				610137621BDF7BC90036AE30 /* portfolio_02.jpg in Resources */,
 				618BF7B71BCBA2C80065203E /* ELCAssetTablePicker.xib in Resources */,
-				61FCA0381BE06A5F005EBCA7 /* c2.jpg in Resources */,
 				610E0A501B53568900186BF3 /* Menu Filled-25.png in Resources */,
-				6101375F1BDF7BC90036AE30 /* IMAG0262.jpg in Resources */,
+				610B06F61BE1C4E000632308 /* 30121-1獎狀.jpg in Resources */,
 				618BF7B61BCBA2C80065203E /* ELCAssetPicker.xib in Resources */,
 				610CB0921B5523E80051EC76 /* Age-25.png in Resources */,
-				61FCA03D1BE06A5F005EBCA7 /* d3.jpg in Resources */,
+				610B06FB1BE1C4E000632308 /* 30121-6獎狀.jpg in Resources */,
 				61B519571BC4F62A0096191C /* Stack of Photos Filled-32.png in Resources */,
 				610CB0931B5523E80051EC76 /* Edit Property-25.png in Resources */,
 				61051F321B57463A00755ED5 /* background5.png in Resources */,
-				610137601BDF7BC90036AE30 /* IMAG0264.jpg in Resources */,
 				613E8B0F1B94375C0020228E /* Coins-50.png in Resources */,
 				6114C9011B43A2A800C73E5E /* Today-32.png in Resources */,
 				618F5EC01BD770B3003C4D59 /* ddd.jpg in Resources */,
 				6105322E1B8ACC290003C936 /* shutterstock_196751174.jpg in Resources */,
+				610B07111BE1C4E000632308 /* 30121-作文16.jpg in Resources */,
 				6173AAD51B5797920049EB63 /* sidebackground.jpg in Resources */,
 				612123F11B412A3B000AA07D /* Phone-32.png in Resources */,
+				614788331BE20012005F48E9 /* 30124國語考券1.jpg in Resources */,
 				61DA54B21BD740D30095D279 /* bbb.jpg in Resources */,
+				6147883F1BE20012005F48E9 /* 30124美勞1.jpg in Resources */,
+				610C31FD1BE302A400A1FC7F /* 黃小翔健康資料.jpg in Resources */,
 				61A8113B1BCE43CF004BADE5 /* SLR Camera Filled-100.png in Resources */,
-				6101376A1BDF7BC90036AE30 /* portfolio_13.jpg in Resources */,
 				6101374A1BDF578F0036AE30 /* rocks_563659.jpg in Resources */,
 				6105322A1B8AC1690003C936 /* Plus Math-100.png in Resources */,
-				6101375E1BDF7BC90036AE30 /* IMAG0260.jpg in Resources */,
-				617ABABF1BC278310008C25C /* mass_background.jpg in Resources */,
-				610137631BDF7BC90036AE30 /* portfolio_03.jpg in Resources */,
+				614788381BE20012005F48E9 /* 30124數學考券1.jpg in Resources */,
+				610B07091BE1C4E000632308 /* 30121美勞畫像.jpg in Resources */,
+				610B07101BE1C4E000632308 /* 30121-作文15.jpg in Resources */,
+				610B070C1BE1C4E000632308 /* 30121美勞魚.jpg in Resources */,
+				614788471BE21414005F48E9 /* 黃小悅體重圖.jpg in Resources */,
 				617F32311B60F90100A03CD6 /* Message Filled-50.png in Resources */,
 				61E574741B85B56E00D2BD21 /* Starred Ticket Filled-32.png in Resources */,
-				61FCA03F1BE06A5F005EBCA7 /* a1.jpg in Resources */,
+				610C31FE1BE302A400A1FC7F /* 黃小翔身高曲線圖.jpg in Resources */,
+				610C31F91BE302A400A1FC7F /* 黃小悅健康管理全部.jpg in Resources */,
 				613C58831B2ACDDD00461072 /* Leave Filled-50.png in Resources */,
-				610137691BDF7BC90036AE30 /* portfolio_11.jpg in Resources */,
 				618F5EBE1BD76FD0003C4D59 /* ccc.jpg in Resources */,
 				61E574761B85B56E00D2BD21 /* Starred Ticket-32.png in Resources */,
-				61FCA0331BE06A5F005EBCA7 /* b1.jpg in Resources */,
 				6100D0F71B86E62F005AEF65 /* iPad2-120.png in Resources */,
+				610B070A1BE1C4E000632308 /* 30121美勞花瓶.jpg in Resources */,
+				614788391BE20012005F48E9 /* 30124獎狀1.jpg in Resources */,
 				610641A61BBE421800BA83BF /* Checked-32.png in Resources */,
+				610B070B1BE1C4E000632308 /* 30121美勞蝴蝶.jpg in Resources */,
 				6114C8FF1B43A2A800C73E5E /* Diploma-32.png in Resources */,
 				61B5195B1BC513460096191C /* Picture-64.png in Resources */,
-				610137611BDF7BC90036AE30 /* portfolio_01.jpg in Resources */,
+				614788491BE21414005F48E9 /* 黃小翔體重圖.jpg in Resources */,
 				6173AACF1B5791190049EB63 /* Find User Filled-32.png in Resources */,
 				613C58851B2AD92100461072 /* Star Filled-50.png in Resources */,
-				61FCA0371BE06A5F005EBCA7 /* c1.jpg in Resources */,
-				610137661BDF7BC90036AE30 /* portfolio_06.jpg in Resources */,
 				612D05201B6A3048002E1239 /* Menu-24.png in Resources */,
 				618BF7B51BCBA2C80065203E /* ELCAlbumPickerController.xib in Resources */,
 				6114C9001B43A2A800C73E5E /* Purchase Order-32.png in Resources */,
 				61E574731B85B56E00D2BD21 /* Starred Ticket Filled-25.png in Resources */,
 				618BF7B81BCBA2C80065203E /* Overlay.png in Resources */,
-				610137681BDF7BC90036AE30 /* portfolio_09.jpg in Resources */,
 				6173AAD31B5791860049EB63 /* Message Filled-32.png in Resources */,
 				61E9D70F1B5656AC00D36552 /* background.png in Resources */,
+				610B06F71BE1C4E000632308 /* 30121-2獎狀.jpg in Resources */,
 				61E308D71B2A997400BE36D0 /* Classroom Filled-50.png in Resources */,
 				611660701B9552AF0032458B /* Expensive 2-50.png in Resources */,
+				614788481BE21414005F48E9 /* 黃小翔身高圖.jpg in Resources */,
+				614788361BE20012005F48E9 /* 30124學習單5.jpg in Resources */,
+				610B07041BE1C4E000632308 /* 30121學習單6.jpg in Resources */,
 				61FEC8EB1B678DE80095C52B /* default photo.jpg in Resources */,
+				6147883A1BE20012005F48E9 /* 30124獎狀2.jpg in Resources */,
+				610B06FA1BE1C4E000632308 /* 30121-5獎狀.jpg in Resources */,
+				610B070E1BE1C4E000632308 /* 30121-作文13.jpg in Resources */,
 				6100D0F61B86E62F005AEF65 /* iPad2-87.png in Resources */,
+				610C31FF1BE302A400A1FC7F /* 黃小翔體重曲線圖.jpg in Resources */,
 				6100D0F41B86E62F005AEF65 /* iPad2-58.png in Resources */,
-				61FCA03A1BE06A5F005EBCA7 /* c4.jpg in Resources */,
 				61F550901B2A768900E26A5D /* Main.storyboard in Resources */,
-				61FCA0361BE06A5F005EBCA7 /* b4.jpg in Resources */,
-				610137641BDF7BC90036AE30 /* portfolio_04.jpg in Resources */,
+				614788411BE20012005F48E9 /* 30124美勞3.jpg in Resources */,
 				6100D0F51B86E62F005AEF65 /* iPad2-80.png in Resources */,
+				610B07021BE1C4E000632308 /* 30121學習單4.jpg in Resources */,
+				610B06FF1BE1C4E000632308 /* 30121學習單1.jpg in Resources */,
 				610B1A751B4CCCA400E3724D /* Paper Filled-50.png in Resources */,
 				618BF7B91BCBA2C80065203E /* Overlay@2x.png in Resources */,
+				614788351BE20012005F48E9 /* 30124學習單4.jpg in Resources */,
+				614788341BE20012005F48E9 /* 30124國語考券2.jpg in Resources */,
+				614788371BE20012005F48E9 /* 30124學習單7.jpg in Resources */,
 				61E9D70D1B56513B00D36552 /* Add User-25.png in Resources */,
-				61FCA0421BE06A5F005EBCA7 /* a4.jpg in Resources */,
+				6147883B1BE20012005F48E9 /* 30124獎狀3.jpg in Resources */,
 				612123ED1B411525000AA07D /* User-100.png in Resources */,
-				61FCA03B1BE06A5F005EBCA7 /* d1.jpg in Resources */,
-				610137651BDF7BC90036AE30 /* portfolio_05.jpg in Resources */,
+				614788461BE21414005F48E9 /* 黃小悅身高圖.jpg in Resources */,
 				6112A2321B4637F900DA4E77 /* Elective Filled-50.png in Resources */,
-				61FCA0391BE06A5F005EBCA7 /* c3.jpg in Resources */,
+				610B070F1BE1C4E000632308 /* 30121-作文14.jpg in Resources */,
+				610C31FB1BE302A400A1FC7F /* 黃小悅身高曲線圖.jpg in Resources */,
+				610B07121BE1C4E000632308 /* 30121-作文21.jpg in Resources */,
+				610C31FA1BE302A400A1FC7F /* 黃小悅健康資料.jpg in Resources */,
 				610882C61B8C0A9700CEBBE5 /* childBackground.jpg in Resources */,
-				61FCA03E1BE06A5F005EBCA7 /* d4.jpg in Resources */,
 				6192D7951BDA46F6007D60BD /* New Filled-32.png in Resources */,
 				61E574751B85B56E00D2BD21 /* Starred Ticket-25.png in Resources */,
 				6173AAD11B5791190049EB63 /* Settings Filled-32.png in Resources */,
-				61FCA0341BE06A5F005EBCA7 /* b2.jpg in Resources */,
+				610B06F81BE1C4E000632308 /* 30121-3獎狀.jpg in Resources */,
 				61FE92E51B58B8BA003BABFE /* Up 4-25.png in Resources */,
-				61FCA0401BE06A5F005EBCA7 /* a2.jpg in Resources */,
+				610C31FC1BE302A400A1FC7F /* 黃小悅體重曲線圖.jpg in Resources */,
 				61CCE30A1BC6450600FD1C17 /* Gallery-64.png in Resources */,
+				614788401BE20012005F48E9 /* 30124美勞2.jpg in Resources */,
+				610B070D1BE1C4E000632308 /* 30121-作文12.jpg in Resources */,
+				610C31F81BE302A400A1FC7F /* ScreenHunter.jpg in Resources */,
 				610AC8481BC23845004FF6F4 /* top-of-the-world.jpg in Resources */,
 				61FE92E41B58B8BA003BABFE /* Down 4-25.png in Resources */,
-				61FCA0411BE06A5F005EBCA7 /* a3.jpg in Resources */,
 				6114855F1B65EB6000B54BBB /* ic_ischool.png in Resources */,
 				61F550951B2A768900E26A5D /* LaunchScreen.xib in Resources */,
-				61FCA03C1BE06A5F005EBCA7 /* d2.jpg in Resources */,
+				610B07001BE1C4E000632308 /* 30121學習單2.jpg in Resources */,
+				610B06F91BE1C4E000632308 /* 30121-4獎狀.jpg in Resources */,
 				61051F311B57463A00755ED5 /* background4.png in Resources */,
 				61E574721B85B56E00D2BD21 /* Message Filled-32 White.png in Resources */,
 				61F550921B2A768900E26A5D /* Images.xcassets in Resources */,
+				610B07011BE1C4E000632308 /* 30121學習單3.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

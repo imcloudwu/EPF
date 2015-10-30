@@ -1573,7 +1573,7 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
-                                    <color key="backgroundColor" red="0.57647058823529407" green="0.69019607843137254" blue="0.8901960784313725" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <color key="backgroundColor" red="0.058823529411764705" green="0.49019607843137253" blue="0.33333333333333331" alpha="0.5" colorSpace="custom" customColorSpace="sRGB"/>
                                     <constraints>
                                         <constraint firstItem="eAV-JE-8BU" firstAttribute="leading" secondItem="JTL-Wq-Rze" secondAttribute="leadingMargin" id="FFv-lV-dk0"/>
                                         <constraint firstAttribute="centerX" secondItem="eAV-JE-8BU" secondAttribute="centerX" id="QXz-cI-paC"/>
@@ -2025,26 +2025,20 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Do you think you have HOPE ?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="u1f-np-gx7">
-                                <rect key="frame" x="26" y="289" width="548" height="21"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="21" id="v2J-e5-675"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="G2b-KQ-lDP">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                            </scrollView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstAttribute="centerX" secondItem="u1f-np-gx7" secondAttribute="centerX" id="RDF-Xb-mYC"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="u1f-np-gx7" secondAttribute="trailing" constant="10" id="Yag-zw-neI"/>
-                            <constraint firstItem="u1f-np-gx7" firstAttribute="leading" secondItem="ZcE-te-7PO" secondAttribute="leadingMargin" constant="10" id="a2F-KB-2gy"/>
-                            <constraint firstAttribute="centerY" secondItem="u1f-np-gx7" secondAttribute="centerY" id="hlM-MK-8gG"/>
+                            <constraint firstItem="G2b-KQ-lDP" firstAttribute="top" secondItem="ZcE-te-7PO" secondAttribute="topMargin" id="6fa-3c-unj"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="G2b-KQ-lDP" secondAttribute="trailing" constant="-16" id="eOL-7f-BMG"/>
+                            <constraint firstItem="G2b-KQ-lDP" firstAttribute="leading" secondItem="ZcE-te-7PO" secondAttribute="leadingMargin" constant="-16" id="kjl-nM-PCq"/>
+                            <constraint firstItem="KZa-MY-Vpb" firstAttribute="top" secondItem="G2b-KQ-lDP" secondAttribute="bottom" id="mB7-pR-Lfc"/>
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="Label" destination="u1f-np-gx7" id="QfJ-gi-gSA"/>
+                        <outlet property="scrollView" destination="G2b-KQ-lDP" id="avp-St-N7m"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Wpn-CE-Vpf" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -4300,7 +4294,7 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
-                                    <color key="backgroundColor" red="0.57647058819999997" green="0.69019607839999997" blue="0.89019607840000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <color key="backgroundColor" red="0.058823529409999999" green="0.49019607840000001" blue="0.33333333329999998" alpha="0.5" colorSpace="custom" customColorSpace="sRGB"/>
                                     <constraints>
                                         <constraint firstAttribute="centerX" secondItem="0JN-k4-ckY" secondAttribute="centerX" id="Wj7-e2-BRt"/>
                                         <constraint firstItem="0JN-k4-ckY" firstAttribute="trailing" secondItem="fAm-Y5-2Qz" secondAttribute="trailingMargin" id="XoC-5A-NJw"/>

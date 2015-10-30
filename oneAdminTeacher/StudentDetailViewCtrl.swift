@@ -132,7 +132,7 @@ class StudentDetailViewCtrl: UIViewController {
             
             let contentView = self.storyboard?.instantiateViewControllerWithIdentifier("TempPageViewCtrl") as! TempPageViewCtrl
             
-            contentView.SubText = "健康管理頁面"
+            contentView.StudentData = StudentData
             
             ChangeContainerViewContent(contentView)
         }

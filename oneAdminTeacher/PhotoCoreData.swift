@@ -55,9 +55,7 @@ class PhotoCoreDataClass{
                 myObject.setValue(pd.Photo, forKey: "preview")
                 myObject.setValue(nil, forKey: "detail")
                 
-                var error: NSError?
-                
-                let success = self.mocMain.save(&error)
+                self.mocMain.save(nil)
                 
                 //println(error)
 

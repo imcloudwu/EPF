@@ -33,75 +33,7 @@ class FakerViewCtrl: UIViewController,UICollectionViewDelegateFlowLayout,UIColle
         
         if GroupSortDatas.count == 0 {
             
-            GroupNames = ["學習單","獎狀集","美術集","作文集"]
-            
-            var aaa = [PreviewData]()
-            var bbb = [PreviewData]()
-            var ccc = [PreviewData]()
-            var ddd = [PreviewData]()
-            
-            if StudentData.Name == "黃小翔"{
-                ccc.append(PreviewData(dsns: "dev.sh_d", uid: "portfolio_01.jpg", group: "美術集"))
-                ccc.append(PreviewData(dsns: "dev.sh_d", uid: "portfolio_02.jpg", group: "美術集"))
-                ccc.append(PreviewData(dsns: "dev.sh_d", uid: "portfolio_03.jpg", group: "美術集"))
-                ccc.append(PreviewData(dsns: "dev.sh_d", uid: "portfolio_04.jpg", group: "美術集"))
-                ccc.append(PreviewData(dsns: "dev.sh_d", uid: "portfolio_05.jpg", group: "美術集"))
-                ccc.append(PreviewData(dsns: "dev.sh_d", uid: "portfolio_06.jpg", group: "美術集"))
-                ccc.append(PreviewData(dsns: "dev.sh_d", uid: "portfolio_08.jpg", group: "美術集"))
-                ccc.append(PreviewData(dsns: "dev.sh_d", uid: "portfolio_09.jpg", group: "美術集"))
-                ccc.append(PreviewData(dsns: "dev.sh_d", uid: "portfolio_11.jpg", group: "美術集"))
-                ccc.append(PreviewData(dsns: "dev.sh_d", uid: "portfolio_13.jpg", group: "美術集"))
-            }
-            else{
-                aaa.append(PreviewData(dsns: "dev.sh_d", uid: "b1.jpg", group: "學習單"))
-                aaa.append(PreviewData(dsns: "dev.sh_d", uid: "b2.jpg", group: "學習單"))
-                aaa.append(PreviewData(dsns: "dev.sh_d", uid: "b3.jpg", group: "學習單"))
-                aaa.append(PreviewData(dsns: "dev.sh_d", uid: "b4.jpg", group: "學習單"))
-                
-                bbb.append(PreviewData(dsns: "dev.sh_d", uid: "c1.jpg", group: "獎狀集"))
-                bbb.append(PreviewData(dsns: "dev.sh_d", uid: "c2.jpg", group: "獎狀集"))
-                bbb.append(PreviewData(dsns: "dev.sh_d", uid: "c3.jpg", group: "獎狀集"))
-                bbb.append(PreviewData(dsns: "dev.sh_d", uid: "c4.jpg", group: "獎狀集"))
-                
-                ccc.append(PreviewData(dsns: "dev.sh_d", uid: "a1.jpg", group: "美術集"))
-                ccc.append(PreviewData(dsns: "dev.sh_d", uid: "a2.jpg", group: "美術集"))
-                ccc.append(PreviewData(dsns: "dev.sh_d", uid: "a3.jpg", group: "美術集"))
-                ccc.append(PreviewData(dsns: "dev.sh_d", uid: "a4.jpg", group: "美術集"))
-                ccc.append(PreviewData(dsns: "dev.sh_d", uid: "IMAG0256.jpg", group: "美術集"))
-                ccc.append(PreviewData(dsns: "dev.sh_d", uid: "IMAG0260.jpg", group: "美術集"))
-                ccc.append(PreviewData(dsns: "dev.sh_d", uid: "IMAG0262.jpg", group: "美術集"))
-                ccc.append(PreviewData(dsns: "dev.sh_d", uid: "IMAG0264.jpg", group: "美術集"))
-                
-                ddd.append(PreviewData(dsns: "dev.sh_d", uid: "d1.jpg", group: "作文集"))
-                ddd.append(PreviewData(dsns: "dev.sh_d", uid: "d2.jpg", group: "作文集"))
-                ddd.append(PreviewData(dsns: "dev.sh_d", uid: "d4.jpg", group: "作文集"))
-                ddd.append(PreviewData(dsns: "dev.sh_d", uid: "d4.jpg", group: "作文集"))
-            }
-            
-            for a in aaa{
-                InitDetailImage(a, name: a.Uid)
-            }
-            
-            for b in bbb{
-                InitDetailImage(b, name: b.Uid)
-            }
-            
-            for c in ccc{
-                InitDetailImage(c, name: c.Uid)
-            }
-            
-            for d in ddd{
-                InitDetailImage(d, name: d.Uid)
-            }
-            
-            GroupSortDatas["學習單"] = aaa
-            GroupSortDatas["獎狀集"] = bbb
-            GroupSortDatas["美術集"] = ccc
-            GroupSortDatas["作文集"] = ddd
-            
-            self.collectionView.reloadData()
-            
-
+            self.DoMeAFavor()
         }
         
     }
@@ -194,15 +126,98 @@ class FakerViewCtrl: UIViewController,UICollectionViewDelegateFlowLayout,UIColle
     
     func InitDetailImage(pd:PreviewData,name:String){
         
-        pd.Photo = UIImage(named: name)?.GetResizeImage(0.33)
-        
-        if let img = PhotoCoreData.LoadDetailData(pd){
-            //do nothing
+        if let img = PhotoCoreData.LoadPreviewData(pd){
+            pd.Photo = img
         }
         else{
+            pd.Photo = UIImage(named: name)?.GetResizeImage(0.33)
             PhotoCoreData.SaveCatchData(pd)
             PhotoCoreData.UpdateCatchData(pd, detail: pd.Photo)
         }
+    }
+    
+    func DoMeAFavor(){
+        
+        GroupNames = ["學習單","獎狀集","美術集","作文集"]
+        
+        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0), {
+            
+            var aaa = [PreviewData]()
+            var bbb = [PreviewData]()
+            var ccc = [PreviewData]()
+            var ddd = [PreviewData]()
+            
+            if self.StudentData.Name == "黃小翔"{
+                aaa.append(PreviewData(dsns: "dev.sh_d", uid: "30124學習單4.jpg", group: "學習單"))
+                aaa.append(PreviewData(dsns: "dev.sh_d", uid: "30124學習單5.jpg", group: "學習單"))
+                aaa.append(PreviewData(dsns: "dev.sh_d", uid: "30124學習單7.jpg", group: "學習單"))
+                
+                bbb.append(PreviewData(dsns: "dev.sh_d", uid: "30124獎狀1.jpg", group: "獎狀集"))
+                bbb.append(PreviewData(dsns: "dev.sh_d", uid: "30124獎狀2.jpg", group: "獎狀集"))
+                bbb.append(PreviewData(dsns: "dev.sh_d", uid: "30124獎狀3.jpg", group: "獎狀集"))
+                
+                ccc.append(PreviewData(dsns: "dev.sh_d", uid: "30124美勞1.jpg", group: "美術集"))
+                ccc.append(PreviewData(dsns: "dev.sh_d", uid: "30124美勞2.jpg", group: "美術集"))
+                ccc.append(PreviewData(dsns: "dev.sh_d", uid: "30124美勞3.jpg", group: "美術集"))
+                
+                ddd.append(PreviewData(dsns: "dev.sh_d", uid: "30124國語考券1.jpg", group: "作文集"))
+                ddd.append(PreviewData(dsns: "dev.sh_d", uid: "30124國語考券2.jpg", group: "作文集"))
+                ddd.append(PreviewData(dsns: "dev.sh_d", uid: "30124數學考券1.jpg", group: "作文集"))
+            }
+            else{
+                aaa.append(PreviewData(dsns: "dev.sh_d", uid: "30121學習單1.jpg", group: "學習單"))
+                aaa.append(PreviewData(dsns: "dev.sh_d", uid: "30121學習單2.jpg", group: "學習單"))
+                aaa.append(PreviewData(dsns: "dev.sh_d", uid: "30121學習單3.jpg", group: "學習單"))
+                aaa.append(PreviewData(dsns: "dev.sh_d", uid: "30121學習單4.jpg", group: "學習單"))
+                aaa.append(PreviewData(dsns: "dev.sh_d", uid: "30121學習單5.jpg", group: "學習單"))
+                aaa.append(PreviewData(dsns: "dev.sh_d", uid: "30121學習單6.jpg", group: "學習單"))
+                
+                bbb.append(PreviewData(dsns: "dev.sh_d", uid: "30121-1獎狀.jpg", group: "獎狀集"))
+                bbb.append(PreviewData(dsns: "dev.sh_d", uid: "30121-2獎狀.jpg", group: "獎狀集"))
+                bbb.append(PreviewData(dsns: "dev.sh_d", uid: "30121-3獎狀.jpg", group: "獎狀集"))
+                bbb.append(PreviewData(dsns: "dev.sh_d", uid: "30121-4獎狀.jpg", group: "獎狀集"))
+                bbb.append(PreviewData(dsns: "dev.sh_d", uid: "30121-5獎狀.jpg", group: "獎狀集"))
+                bbb.append(PreviewData(dsns: "dev.sh_d", uid: "30121-6獎狀.jpg", group: "獎狀集"))
+                
+                ccc.append(PreviewData(dsns: "dev.sh_d", uid: "30121美勞畫像.jpg", group: "美術集"))
+                ccc.append(PreviewData(dsns: "dev.sh_d", uid: "30121美勞花瓶.jpg", group: "美術集"))
+                ccc.append(PreviewData(dsns: "dev.sh_d", uid: "30121美勞蝴蝶.jpg", group: "美術集"))
+                ccc.append(PreviewData(dsns: "dev.sh_d", uid: "30121美勞魚.jpg", group: "美術集"))
+                
+                ddd.append(PreviewData(dsns: "dev.sh_d", uid: "30121-作文12.jpg", group: "作文集"))
+                ddd.append(PreviewData(dsns: "dev.sh_d", uid: "30121-作文13.jpg", group: "作文集"))
+                ddd.append(PreviewData(dsns: "dev.sh_d", uid: "30121-作文14.jpg", group: "作文集"))
+                ddd.append(PreviewData(dsns: "dev.sh_d", uid: "30121-作文15.jpg", group: "作文集"))
+                ddd.append(PreviewData(dsns: "dev.sh_d", uid: "30121-作文16.jpg", group: "作文集"))
+                ddd.append(PreviewData(dsns: "dev.sh_d", uid: "30121-作文21.jpg", group: "作文集"))
+            }
+            
+            for a in aaa{
+                self.InitDetailImage(a, name: a.Uid)
+            }
+            
+            for b in bbb{
+                self.InitDetailImage(b, name: b.Uid)
+            }
+            
+            for c in ccc{
+                self.InitDetailImage(c, name: c.Uid)
+            }
+            
+            for d in ddd{
+                self.InitDetailImage(d, name: d.Uid)
+            }
+            
+            dispatch_async(dispatch_get_main_queue(), {
+                
+                self.GroupSortDatas["學習單"] = aaa
+                self.GroupSortDatas["獎狀集"] = bbb
+                self.GroupSortDatas["美術集"] = ccc
+                self.GroupSortDatas["作文集"] = ddd
+                
+                self.collectionView.reloadData()
+            })
+        })
     }
     
 }

@@ -124,11 +124,20 @@ class StudentAlbumViewCtrl: UIViewController,UICollectionViewDelegateFlowLayout,
                 else{
                     
                     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0), {
+                        
                         UpdatePreviewData(data,Global.BasicContractName)
                         
                         dispatch_async(dispatch_get_main_queue(), {
+                            
                             PhotoCoreData.SaveCatchData(data)
-                            imgView.image = data.Photo
+                            
+                            if let tempCell = collectionView.cellForItemAtIndexPath(indexPath){
+                                
+                                let tempImgView = tempCell.viewWithTag(100) as! UIImageView
+                                
+                                tempImgView.image = data.Photo
+                            }
+                            
                         })
                     })
                 }

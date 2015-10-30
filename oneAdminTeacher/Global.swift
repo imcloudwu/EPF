@@ -79,8 +79,6 @@ public class Global{
         
         let fm = NSFileManager()
         fm.removeItemAtPath(MyPhotoLocalPath, error: nil)
-        
-        PhotoCoreData.DeleteAll()
     }
     
     //    static func GetTeacherAccountByUUIDs(uuids:[String]) -> [TeacherAccount]{
