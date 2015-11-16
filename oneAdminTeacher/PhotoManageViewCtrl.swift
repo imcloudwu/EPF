@@ -26,24 +26,18 @@ class PhotoManageViewCtrl: UIViewController,UITableViewDelegate,UITableViewDataS
         tableView.delegate = self
         tableView.dataSource = self
         
-        for group in Global.TeacherGroups{
-            _Data.append(GelleryItem(group: group))
-        }
         // Do any additional setup after loading the view, typically from a nib.
     }
     
-    func ToggleSideMenu(){
-        var app = UIApplication.sharedApplication().delegate as! AppDelegate
+    func SetGelleryData(){
         
-        app.centerContainer?.toggleDrawerSide(MMDrawerSide.Left, animated: true, completion: nil)
-    }
-    
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
-    override func viewDidAppear(animated: Bool) {
+        var datas = [GelleryItem]()
+        
+        for group in Global.TeacherGroups{
+            datas.append(GelleryItem(group: group))
+        }
+        
+        _Data = datas
         
         for data in _Data{
             
@@ -61,6 +55,21 @@ class PhotoManageViewCtrl: UIViewController,UITableViewDelegate,UITableViewDataS
             })
             
         }
+    }
+    
+    func ToggleSideMenu(){
+        var app = UIApplication.sharedApplication().delegate as! AppDelegate
+        
+        app.centerContainer?.toggleDrawerSide(MMDrawerSide.Left, animated: true, completion: nil)
+    }
+    
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
+    }
+    
+    override func viewDidAppear(animated: Bool) {
+        SetGelleryData()
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int{
