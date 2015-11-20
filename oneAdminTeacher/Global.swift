@@ -78,7 +78,10 @@ public class Global{
         //WatchingGroup = [GroupItem]()
         
         let fm = NSFileManager()
-        fm.removeItemAtPath(MyPhotoLocalPath, error: nil)
+        do {
+            try fm.removeItemAtPath(MyPhotoLocalPath)
+        } catch _ {
+        }
     }
     
     //    static func GetTeacherAccountByUUIDs(uuids:[String]) -> [TeacherAccount]{
@@ -301,8 +304,8 @@ func ShowErrorAlert(vc:UIViewController,title:String,msg:String){
 //    return retVal
 //}
 
-func ChangeContentView(vc:UIViewController){
-    var app = UIApplication.sharedApplication().delegate as! AppDelegate
+func ChangeContentView(vc:UIViewController?){
+    let app = UIApplication.sharedApplication().delegate as! AppDelegate
     
     app.centerContainer?.setCenterViewController(vc, withCloseAnimation: true, completion: nil)
     //app.centerContainer?.closeDrawerAnimated(true, completion: nil)
@@ -315,14 +318,14 @@ func ChangeContentView(vc:UIViewController){
 }
 
 func EnableSideMenu(){
-    var app = UIApplication.sharedApplication().delegate as! AppDelegate
+    let app = UIApplication.sharedApplication().delegate as! AppDelegate
     
     app.centerContainer?.openDrawerGestureModeMask = MMOpenDrawerGestureMode.PanningCenterView
-    app.centerContainer?.closeDrawerGestureModeMask = MMCloseDrawerGestureMode.PanningCenterView | MMCloseDrawerGestureMode.TapCenterView
+    app.centerContainer?.closeDrawerGestureModeMask = [MMCloseDrawerGestureMode.PanningCenterView, MMCloseDrawerGestureMode.TapCenterView]
 }
 
 func DisableSideMenu(){
-    var app = UIApplication.sharedApplication().delegate as! AppDelegate
+    let app = UIApplication.sharedApplication().delegate as! AppDelegate
     
     app.centerContainer?.openDrawerGestureModeMask = MMOpenDrawerGestureMode.None
     app.centerContainer?.closeDrawerGestureModeMask = MMCloseDrawerGestureMode.None
@@ -331,7 +334,13 @@ func DisableSideMenu(){
 func GetAccessTokenAndRefreshToken(code:String){
     var error : NSError?
     var oautHelper = OAuthHelper(clientId: Global.clientID, clientSecret: Global.clientSecret)
-    let token = oautHelper.getAccessTokenAndRefreshToken(code, error: &error)
+    let token: (String, String)!
+    do {
+        token = try oautHelper.getAccessTokenAndRefreshToken(code)
+    } catch var error1 as NSError {
+        error = error1
+        token = nil
+    }
     //println(token)
     Global.SetAccessTokenAndRefreshToken(token)
     
@@ -342,7 +351,13 @@ func GetAccessTokenAndRefreshToken(code:String){
 func RenewRefreshToken(refreshToken:String){
     var error : NSError?
     var oautHelper = OAuthHelper(clientId: Global.clientID, clientSecret: Global.clientSecret)
-    let token = oautHelper.renewAccessToken(refreshToken, error: &error)
+    let token: (String, String)!
+    do {
+        token = try oautHelper.renewAccessToken(refreshToken)
+    } catch var error1 as NSError {
+        error = error1
+        token = nil
+    }
     Global.SetAccessTokenAndRefreshToken(token)
 }
 
@@ -372,15 +387,20 @@ func GetSchoolName(con:Connection) -> String{
     //encode成功呼叫查詢
     if let encodingName = con.accessPoint.UrlEncoding{
         
-        var data = HttpClient.Get("http://dsns.1campus.net/campusman.ischool.com.tw/config.public/GetSchoolList?content=%3CRequest%3E%3CMatch%3E\(encodingName)%3C/Match%3E%3CPagination%3E%3CPageSize%3E10%3C/PageSize%3E%3CStartPage%3E1%3C/StartPage%3E%3C/Pagination%3E%3C/Request%3E")
+        let data = try? HttpClient.Get("http://dsns.1campus.net/campusman.ischool.com.tw/config.public/GetSchoolList?content=%3CRequest%3E%3CMatch%3E\(encodingName)%3C/Match%3E%3CPagination%3E%3CPageSize%3E10%3C/PageSize%3E%3CStartPage%3E1%3C/StartPage%3E%3C/Pagination%3E%3C/Request%3E")
         
         if let rsp = data{
             
             //println(NSString(data: rsp, encoding: NSUTF8StringEncoding))
             
-            var nserr : NSError?
+            //var nserr : NSError?
             
-            let xml = AEXMLDocument(xmlData: rsp, error: &nserr)
+            let xml: AEXMLDocument?
+            do {
+                xml = try AEXMLDocument(xmlData: rsp)
+            } catch _ {
+                xml = nil
+            }
             
             if let name = xml?.root["Response"]["School"]["Title"].stringValue{
                 schoolName = name
@@ -407,11 +427,16 @@ func GetTeacherAccountItem(account:String) -> TeacherAccount?{
 func GetAllTeacherAccount(schoolName:String,con:Connection){
     
     var err : DSFault!
-    var nserr : NSError?
+    //var nserr : NSError?
     
-    var rsp = con.SendRequest("main.GetAllTeacher", bodyContent: "", &err)
+    let rsp = con.SendRequest("main.GetAllTeacher", bodyContent: "", &err)
     
-    let xml = AEXMLDocument(xmlData: rsp.dataValue, error: &nserr)
+    let xml: AEXMLDocument?
+    do {
+        xml = try AEXMLDocument(xmlData: rsp.dataValue)
+    } catch _ {
+        xml = nil
+    }
     
     if let teachers = xml?.root["Teachers"]["Teacher"].all{
         for teacher in teachers{
@@ -420,7 +445,7 @@ func GetAllTeacherAccount(schoolName:String,con:Connection){
             
             let teacherItem = TeacherAccount(schoolName: schoolName, name: teacherName, account: teacherAccount)
             
-            if !contains(Global.MyTeacherList, teacherItem){
+            if !Global.MyTeacherList.contains(teacherItem){
                 Global.MyTeacherList.append(teacherItem)
             }
         }
@@ -445,7 +470,13 @@ func SetTeachersUUID(source:[TeacherAccount]){
         }
     }
     
-    var rsp = HttpClient.Get("https://auth.ischool.com.tw/services/uuidLookup.php?accounts=[\(emailString)]",err: &err)
+    var rsp: NSData?
+    do {
+        rsp = try HttpClient.Get("https://auth.ischool.com.tw/services/uuidLookup.php?accounts=[\(emailString)]")
+    } catch let error as NSError {
+        err = error
+        rsp = nil
+    }
     
     //println(NSString(data: rsp!, encoding: NSUTF8StringEncoding))
     
@@ -501,9 +532,11 @@ func GetImageFromBase64(baseStr:String) -> UIImage{
 
 func GetBase64FromImage(img:UIImage,compressionQuality: CGFloat) -> String{
     
-    let imageData = UIImageJPEGRepresentation(img, compressionQuality)
+    if let imageData = UIImageJPEGRepresentation(img, compressionQuality){
+        return imageData.base64EncodedStringWithOptions([])
+    }
     
-    return imageData.base64EncodedStringWithOptions(.allZeros)
+    return ""
 }
 
 func GetKey(str1:String,str2:String) -> String{

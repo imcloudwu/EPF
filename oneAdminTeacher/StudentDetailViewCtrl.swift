@@ -62,7 +62,7 @@ class StudentDetailViewCtrl: UIViewController {
         PhotoImage.layer.borderWidth = 3.0
         PhotoImage.layer.borderColor = UIColor.whiteColor().CGColor
         
-        var tap = UITapGestureRecognizer(target: self, action: "DisplayPhoto")
+        let tap = UITapGestureRecognizer(target: self, action: "DisplayPhoto")
         PhotoImage.addGestureRecognizer(tap)
         
         if !IsClassStudent{
@@ -197,7 +197,7 @@ class StudentDetailViewCtrl: UIViewController {
         
         //newController.didMoveToParentViewController(self)
         
-        for sub in EmbedView.subviews as! [UIView]{
+        for sub in EmbedView.subviews {
             sub.removeFromSuperview()
         }
         

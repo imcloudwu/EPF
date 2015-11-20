@@ -11,7 +11,7 @@ import Foundation
 func GetMyChildren(con:Connection) -> [Student]{
     
     var err : DSFault!
-    var nserr : NSError?
+    //var nserr : NSError?
     
     var retVal = [Student]()
     
@@ -24,7 +24,13 @@ func GetMyChildren(con:Connection) -> [Student]{
         return retVal
     }
     
-    let xml = AEXMLDocument(xmlData: rsp.dataValue, error: &nserr)
+    let xml: AEXMLDocument?
+    
+    do {
+        xml = try AEXMLDocument(xmlData: rsp.dataValue)
+    } catch _ {
+        xml = nil
+    }
     
     if let students = xml?.root["Student"].all {
         for stu in students{
@@ -42,7 +48,7 @@ func GetMyChildren(con:Connection) -> [Student]{
             let custodianName = stu["CustodianName"].stringValue
             let fatherName = stu["FatherName"].stringValue
             let motherName = stu["MotherName"].stringValue
-            let freshmanPhoto = GetImageFromBase64String(stu["StudentPhoto"].stringValue, UIImage(named: "User-100.png"))
+            let freshmanPhoto = GetImageFromBase64String(stu["StudentPhoto"].stringValue, defaultImg: UIImage(named: "User-100.png"))
             
             let stuItem = Student(DSNS: con.accessPoint,ID: studentID, ClassID: "", ClassName: className, Name: studentName, SeatNo: seatNo, StudentNumber: studentNumber, Gender: gender, MailingAddress: mailingAddress, PermanentAddress: permanentAddress, ContactPhone: contactPhone, PermanentPhone: permanentPhone, CustodianName: custodianName, FatherName: fatherName, MotherName: motherName, Photo: freshmanPhoto)
             
@@ -50,7 +56,7 @@ func GetMyChildren(con:Connection) -> [Student]{
         }
     }
     
-    retVal.sort{ $0.SeatNo.toInt() < $1.SeatNo.toInt() }
+    retVal.sortInPlace{ Int($0.SeatNo) < Int($1.SeatNo) }
     
 //    if retVal.count > 0{
 //        
@@ -66,16 +72,18 @@ func GetMyChildGroup(StudentData:Student) -> [GroupItem]{
     
     var retVal = [GroupItem]()
     
-    var rsp = HttpClient.Get("https://dsns.1campus.net/\(StudentData.DSNS)/sakura/GetMyChild?stt=PassportAccessToken&AccessToken=\(Global.AccessToken)")
+    let rsp = try? HttpClient.Get("https://dsns.1campus.net/\(StudentData.DSNS)/sakura/GetMyChild?stt=PassportAccessToken&AccessToken=\(Global.AccessToken)")
     
     if rsp == nil{
         return retVal
     }
     
-    var nserr : NSError?
-    var xml = AEXMLDocument(xmlData: rsp!, error: &nserr)
-    
-    if nserr != nil{
+    //var nserr : NSError?
+    var xml: AEXMLDocument?
+    do {
+        xml = try AEXMLDocument(xmlData: rsp!)
+    } catch _ {
+        xml = nil
         return retVal
     }
     
@@ -95,7 +103,7 @@ func GetMyChildGroup(StudentData:Student) -> [GroupItem]{
                     let groupName = group["GroupName"].stringValue
                     let groupOriginal = group["GroupOriginal"].stringValue
                     
-                    var gi = GroupItem(DSNS: StudentData.DSNS, GroupId: groupId, GroupName: groupName, IsTeacher: false)
+                    let gi = GroupItem(DSNS: StudentData.DSNS, GroupId: groupId, GroupName: groupName, IsTeacher: false)
                     retVal.append(gi)
                 }
             }
@@ -109,18 +117,23 @@ func GetMyChildGroup(dsns:DsnsItem) -> [GroupItem]{
     
     var retVal = [GroupItem]()
     
-    var rsp = HttpClient.Get("https://dsns.1campus.net/\(dsns.AccessPoint)/sakura/GetMyChild?stt=PassportAccessToken&AccessToken=\(Global.AccessToken)")
+    let rsp = try? HttpClient.Get("https://dsns.1campus.net/\(dsns.AccessPoint)/sakura/GetMyChild?stt=PassportAccessToken&AccessToken=\(Global.AccessToken)")
     
     if rsp == nil{
         return retVal
     }
     
-    var nserr : NSError?
-    var xml = AEXMLDocument(xmlData: rsp!, error: &nserr)
-    
-    if nserr != nil{
-        return retVal
+    //var nserr : NSError?
+    var xml: AEXMLDocument?
+    do {
+        xml = try AEXMLDocument(xmlData: rsp!)
+    } catch _ {
+        xml = nil
     }
+    
+//    if nserr != nil{
+//        return retVal
+//    }
     
     if let children = xml?.root["Child"].all{
         
@@ -134,7 +147,7 @@ func GetMyChildGroup(dsns:DsnsItem) -> [GroupItem]{
                     let groupName = group["GroupName"].stringValue
                     let groupOriginal = group["GroupOriginal"].stringValue
                     
-                    var gi = GroupItem(DSNS: dsns.AccessPoint, GroupId: groupId, GroupName: groupName, IsTeacher: false)
+                    let gi = GroupItem(DSNS: dsns.AccessPoint, GroupId: groupId, GroupName: groupName, IsTeacher: false)
                     retVal.append(gi)
                 }
             }
@@ -146,7 +159,7 @@ func GetMyChildGroup(dsns:DsnsItem) -> [GroupItem]{
 
 func UpdatePreviewData(data:PreviewData,contract:String) -> Bool {
     
-    var con = GetCommonConnect(data.Dsns, contract)
+    var con = GetCommonConnect(data.Dsns, contract: contract)
     
     var err : DSFault!
     
@@ -156,10 +169,13 @@ func UpdatePreviewData(data:PreviewData,contract:String) -> Bool {
         return false
     }
     
-    var nserr : NSError?
-    var xml = AEXMLDocument(xmlData: rsp.dataValue, error: &nserr)
+    //var nserr : NSError?
+    var xml: AEXMLDocument?
     
-    if nserr != nil{
+    do {
+        xml = try AEXMLDocument(xmlData: rsp.dataValue)
+    } catch _ {
+        xml = nil
         return false
     }
     

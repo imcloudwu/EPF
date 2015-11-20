@@ -90,8 +90,13 @@ class StudentInfoViewCtrl: UIViewController,UITableViewDelegate,UITableViewDataS
     }
     
     func GetAddress(xmlString:String) -> String{
-        var nserr : NSError?
-        let xml = AEXMLDocument(xmlData: xmlString.dataValue, error: &nserr)
+        //var nserr : NSError?
+        let xml: AEXMLDocument?
+        do {
+            xml = try AEXMLDocument(xmlData: xmlString.dataValue)
+        } catch _ {
+            xml = nil
+        }
         
         var retVal = ""
         
@@ -158,7 +163,7 @@ class StudentInfoViewCtrl: UIViewController,UITableViewDelegate,UITableViewDataS
     }
     
     func LockBtnEnableCheck(){
-        if contains(Global.Students, StudentData){
+        if Global.Students.contains(StudentData){
             AddBtn.enabled = false
         }
         else{

@@ -78,8 +78,8 @@ class PhotoEditViewCtrl: UIViewController,UIImagePickerControllerDelegate,ELCIma
         if !ManualyBtn.enabled{
             
             dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0), {
-               var members = self.GetGroupMembers()
-               var selected = self.GetDataTags()
+               let members = self.GetGroupMembers()
+               let selected = self.GetDataTags()
                 
                 dispatch_async(dispatch_get_main_queue(), {
                     self._TagSelector.List = members
@@ -146,7 +146,7 @@ class PhotoEditViewCtrl: UIViewController,UIImagePickerControllerDelegate,ELCIma
         TextViewHeight.constant = 0
     }
     
-    override func touchesBegan(touches: Set<NSObject>, withEvent event: UIEvent) {
+    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
         self.view.endEditing(true)
     }
     
@@ -191,7 +191,7 @@ class PhotoEditViewCtrl: UIViewController,UIImagePickerControllerDelegate,ELCIma
     }
     
     //相機使用
-    func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [NSObject : AnyObject]){
+    func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject]){
         
         let choseImage = info[UIImagePickerControllerOriginalImage] as! UIImage
         
@@ -226,7 +226,7 @@ class PhotoEditViewCtrl: UIViewController,UIImagePickerControllerDelegate,ELCIma
         
         _photoCount = _selectedImg.count
         
-        for ss in self.scrollView.subviews as! [UIView]{
+        for ss in self.scrollView.subviews {
             ss.removeFromSuperview()
         }
         
@@ -313,19 +313,24 @@ class PhotoEditViewCtrl: UIViewController,UIImagePickerControllerDelegate,ELCIma
         
         let comment = textView.text == _defaultText ? "" : textView.text
         
-        var con = GetCommonConnect(GroupData.DSNS, Global.TeacherContractName)
+        var con = GetCommonConnect(GroupData.DSNS, contract: Global.TeacherContractName)
         
         for img in _selectedImg{
             
             var err : DSFault!
             
-            let previewBase64 = GetBase64FromImage(img.GetResizeImage(0.33),0.5)
-            let detailBase64 = GetBase64FromImage(img,0.8)
+            let previewBase64 = GetBase64FromImage(img.GetResizeImage(0.33),compressionQuality: 0.5)
+            let detailBase64 = GetBase64FromImage(img,compressionQuality: 0.8)
             
             var rsp = con.SendRequest("main.InsertPhoto", bodyContent: "<Request><Epf.data><DetailData>\(detailBase64)</DetailData><PreviewData>\(previewBase64)</PreviewData><RefGroupId>\(GroupData.GroupId)</RefGroupId><Comment>\(comment)</Comment></Epf.data></Request>", &err)
             
-            var error : NSError?
-            var xml = AEXMLDocument(xmlData: rsp.dataValue, error: &error)
+            //var error : NSError?
+            var xml: AEXMLDocument?
+            do {
+                xml = try AEXMLDocument(xmlData: rsp.dataValue)
+            } catch _ {
+                xml = nil
+            }
             
             if let newId = xml?.root["Result"]["NewID"].stringValue{
                 SaveTags(newId)
@@ -337,14 +342,14 @@ class PhotoEditViewCtrl: UIViewController,UIImagePickerControllerDelegate,ELCIma
         
         let comment = textView.text == _defaultText ? "" : textView.text
         
-        var con = GetCommonConnect(Base.Dsns, Global.TeacherContractName)
+        var con = GetCommonConnect(Base.Dsns, contract: Global.TeacherContractName)
         
         var err : DSFault!
         
         var rsp = con.SendRequest("main.UpdatePhoto", bodyContent: "<Request><Epf.data><Field><Comment>\(comment)</Comment></Field><UID>\(Base.Uid)</UID></Epf.data></Request>", &err)
         
         if rsp.isEmpty{
-            println(err.message)
+            print(err.message)
         }
         
         SaveTags(Base.Uid)
@@ -366,14 +371,14 @@ class PhotoEditViewCtrl: UIViewController,UIImagePickerControllerDelegate,ELCIma
         
         let dsns = Base != nil ? Base.Dsns : GroupData.DSNS
         
-        var con = GetCommonConnect(dsns, Global.TeacherContractName)
+        var con = GetCommonConnect(dsns, contract: Global.TeacherContractName)
         
         var err : DSFault!
         
         var rsp = con.SendRequest("main.UpdateTag", bodyContent: "<Request>\(deleteOnly)<RefDataId>\(refDataId)</RefDataId><Students>\(studentIds)</Students></Request>", &err)
         
         if rsp.isEmpty{
-            println(err.message)
+            print(err.message)
         }
     }
     
@@ -384,16 +389,18 @@ class PhotoEditViewCtrl: UIViewController,UIImagePickerControllerDelegate,ELCIma
         let dsns = Base == nil ? GroupData.DSNS : Base.Dsns
         let groupId = Base == nil ? GroupData.GroupId : Base.Group
         
-        var rsp = HttpClient.Get("https://dsns.1campus.net/\(dsns)/sakura/GetGroupMember?stt=PassportAccessToken&AccessToken=\(Global.AccessToken)&parser=spliter&content=GroupId:\(groupId)")
+        let rsp = try? HttpClient.Get("https://dsns.1campus.net/\(dsns)/sakura/GetGroupMember?stt=PassportAccessToken&AccessToken=\(Global.AccessToken)&parser=spliter&content=GroupId:\(groupId)")
         
         if rsp == nil{
             return retVal
         }
         
-        var nserr : NSError?
-        var xml = AEXMLDocument(xmlData: rsp!, error: &nserr)
-        
-        if nserr != nil{
+        //var nserr : NSError?
+        var xml: AEXMLDocument?
+        do {
+            xml = try AEXMLDocument(xmlData: rsp!)
+        } catch _ {
+            xml = nil
             return retVal
         }
         
@@ -405,13 +412,13 @@ class PhotoEditViewCtrl: UIViewController,UIImagePickerControllerDelegate,ELCIma
                 let studentName = student["StudentName"].stringValue
                 let seatNo = student["SeatNo"].intValue
                 
-                var ts = TagStudent(StudentId: studentId, StudentName: studentName, SeatNo: seatNo)
+                let ts = TagStudent(StudentId: studentId, StudentName: studentName, SeatNo: seatNo)
                 
                 retVal.append(ts)
             }
         }
         
-        retVal.sort({ $0.SeatNo < $1.SeatNo})
+        retVal.sortInPlace({ $0.SeatNo < $1.SeatNo})
         
         return retVal
     }
@@ -424,21 +431,23 @@ class PhotoEditViewCtrl: UIViewController,UIImagePickerControllerDelegate,ELCIma
             return retVal
         }
         
-        var con = GetCommonConnect(Base.Dsns, Global.TeacherContractName)
+        var con = GetCommonConnect(Base.Dsns, contract: Global.TeacherContractName)
         
         var err : DSFault!
         
         var rsp = con.SendRequest("main.GetPhotoTag", bodyContent: "<Request><RefDataId>\(Base.Uid)</RefDataId></Request>", &err)
         
         if rsp.isEmpty{
-            println(err.message)
+            print(err.message)
             return retVal
         }
         
-        var nserr : NSError?
-        var xml = AEXMLDocument(xmlData: rsp.dataValue, error: &nserr)
-        
-        if nserr != nil{
+        //var nserr : NSError?
+        var xml: AEXMLDocument?
+        do {
+            xml = try AEXMLDocument(xmlData: rsp.dataValue)
+        } catch _ {
+            xml = nil
             return retVal
         }
         

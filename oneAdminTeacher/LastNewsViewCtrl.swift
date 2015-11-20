@@ -63,23 +63,23 @@ class LastNewsViewCtrl: UIViewController,UITableViewDelegate,UITableViewDataSour
             
             dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0), {
                 
-                var groups = GetMyChildGroup(dsns)
+                let groups = GetMyChildGroup(dsns)
                 
-                var lnis = self.GetLastNewsItems(dsns.AccessPoint,groups: groups)
+                let lnis = self.GetLastNewsItems(dsns.AccessPoint,groups: groups)
                 
                 if lnis.count > 0{
                     
                     dispatch_async(dispatch_get_main_queue(), {
                         
                         for lni in lnis{
-                            if !contains(lastNewItems, lni){
+                            if !lastNewItems.contains(lni){
                                 lastNewItems.append(lni)
                             }
                         }
                         
                         if lastNewItems.count > 0 {
                             
-                            lastNewItems.sort({ $0.Date > $1.Date })
+                            lastNewItems.sortInPlace({ $0.Date > $1.Date })
                             
                             self._LastNewItems = lastNewItems
                             
@@ -109,13 +109,13 @@ class LastNewsViewCtrl: UIViewController,UITableViewDelegate,UITableViewDataSour
         cell.Comment.text = data.Commment
         
         if data.PreData.Photo == nil {
-            if let catch = PhotoCoreData.LoadPreviewData(data.PreData) {
-                data.PreData.Photo = catch
+            if let `catch` = PhotoCoreData.LoadPreviewData(data.PreData) {
+                data.PreData.Photo = `catch`
             }
             else{
                 dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0), {
                     
-                    UpdatePreviewData(data.PreData,Global.BasicContractName)
+                    UpdatePreviewData(data.PreData,contract: Global.BasicContractName)
                     
                     dispatch_async(dispatch_get_main_queue(), {
                         PhotoCoreData.SaveCatchData(data.PreData)
@@ -159,7 +159,7 @@ class LastNewsViewCtrl: UIViewController,UITableViewDelegate,UITableViewDataSour
         
         var retVal = [LastNewItem]()
         
-        var con = GetCommonConnect(dsns, Global.BasicContractName)
+        var con = GetCommonConnect(dsns, contract: Global.BasicContractName)
         
         var err : DSFault!
         
@@ -169,10 +169,12 @@ class LastNewsViewCtrl: UIViewController,UITableViewDelegate,UITableViewDataSour
             return retVal
         }
         
-        var nserr : NSError?
-        var xml = AEXMLDocument(xmlData: rsp.dataValue, error: &nserr)
-        
-        if nserr != nil{
+        //var nserr : NSError?
+        var xml: AEXMLDocument?
+        do {
+            xml = try AEXMLDocument(xmlData: rsp.dataValue)
+        } catch _ {
+            xml = nil
             return retVal
         }
         
@@ -199,7 +201,7 @@ class LastNewsViewCtrl: UIViewController,UITableViewDelegate,UITableViewDataSour
     }
     
     func ToggleSideMenu(){
-        var app = UIApplication.sharedApplication().delegate as! AppDelegate
+        let app = UIApplication.sharedApplication().delegate as! AppDelegate
         
         app.centerContainer?.toggleDrawerSide(MMDrawerSide.Left, animated: true, completion: nil)
     }

@@ -69,7 +69,7 @@ class StudentAlbumViewCtrl: UIViewController,UICollectionViewDelegateFlowLayout,
                     
                     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0), {
                         
-                        var datas = self.GetPreviewDatas(group.GroupId)
+                        let datas = self.GetPreviewDatas(group.GroupId)
                         
                         dispatch_async(dispatch_get_main_queue(), {
                             
@@ -109,23 +109,23 @@ class StudentAlbumViewCtrl: UIViewController,UICollectionViewDelegateFlowLayout,
         
         let data = groupDatas[indexPath.row]
         
-        let cell = collectionView.dequeueReusableCellWithReuseIdentifier(CellId, forIndexPath: indexPath) as! UICollectionViewCell
+        let cell = collectionView.dequeueReusableCellWithReuseIdentifier(CellId, forIndexPath: indexPath) 
         
-        var imgView = cell.viewWithTag(100) as! UIImageView
+        let imgView = cell.viewWithTag(100) as! UIImageView
         
         if data.Photo == nil {
             
-            //dispatch_async(dispatch_get_main_queue(), {
+            dispatch_async(dispatch_get_main_queue(), {
                 
-                if let catch = PhotoCoreData.LoadPreviewData(data) {
-                    data.Photo = catch
-                    //imgView.image = data.Photo
+                if let `catch` = PhotoCoreData.LoadPreviewData(data) {
+                    data.Photo = `catch`
+                    imgView.image = data.Photo
                 }
                 else{
                     
                     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0), {
                         
-                        UpdatePreviewData(data,Global.BasicContractName)
+                        UpdatePreviewData(data,contract: Global.BasicContractName)
                         
                         dispatch_async(dispatch_get_main_queue(), {
                             
@@ -142,7 +142,7 @@ class StudentAlbumViewCtrl: UIViewController,UICollectionViewDelegateFlowLayout,
                     })
                 }
                 
-            //})
+            })
         }
         
         imgView.image = data.Photo
@@ -211,7 +211,7 @@ class StudentAlbumViewCtrl: UIViewController,UICollectionViewDelegateFlowLayout,
         
         var retVal = [PreviewData]()
         
-        var con = GetCommonConnect(StudentData.DSNS, Global.BasicContractName)
+        var con = GetCommonConnect(StudentData.DSNS, contract: Global.BasicContractName)
         
         var err : DSFault!
         
@@ -221,10 +221,12 @@ class StudentAlbumViewCtrl: UIViewController,UICollectionViewDelegateFlowLayout,
             return retVal
         }
         
-        var nserr : NSError?
-        var xml = AEXMLDocument(xmlData: rsp.dataValue, error: &nserr)
-        
-        if nserr != nil{
+        //var nserr : NSError?
+        var xml: AEXMLDocument?
+        do {
+            xml = try AEXMLDocument(xmlData: rsp.dataValue)
+        } catch _ {
+            xml = nil
             return retVal
         }
         
@@ -246,7 +248,7 @@ class StudentAlbumViewCtrl: UIViewController,UICollectionViewDelegateFlowLayout,
         
         var retVal = [PreviewData]()
         
-        var con = GetCommonConnect(StudentData.DSNS, Global.BasicContractName)
+        var con = GetCommonConnect(StudentData.DSNS, contract: Global.BasicContractName)
         
         var err : DSFault!
         
@@ -256,10 +258,12 @@ class StudentAlbumViewCtrl: UIViewController,UICollectionViewDelegateFlowLayout,
             return retVal
         }
         
-        var nserr : NSError?
-        var xml = AEXMLDocument(xmlData: rsp.dataValue, error: &nserr)
-        
-        if nserr != nil{
+        //var nserr : NSError?
+        var xml: AEXMLDocument?
+        do {
+            xml = try AEXMLDocument(xmlData: rsp.dataValue)
+        } catch _ {
+            xml = nil
             return retVal
         }
         

@@ -35,9 +35,9 @@ class PhotoDetailViewCtrl: UIViewController,UIPageViewControllerDataSource {
         
         let startingViewController: PhotoPageViewCtrl = viewControllerAtIndex(CurrentIndex)!
         
-        let viewControllers: NSArray = [startingViewController]
+        let viewControllers = [startingViewController]
         
-        pageViewController!.setViewControllers(viewControllers as [AnyObject], direction: .Forward, animated: false, completion: nil)
+        pageViewController!.setViewControllers(viewControllers, direction: .Forward, animated: false, completion: nil)
         
         pageViewController!.view.frame = CGRectMake(0, 0, view.frame.size.width, view.frame.size.height);
         
@@ -86,7 +86,7 @@ class PhotoDetailViewCtrl: UIViewController,UIPageViewControllerDataSource {
         // Create a new view controller and pass suitable data.
         let pageContentViewController = self.storyboard?.instantiateViewControllerWithIdentifier("PhotoPageViewCtrl") as! PhotoPageViewCtrl
         
-        var base = Base.Clone
+        let base = Base.Clone
         base.Uid = Uids[index]
         
         pageContentViewController.Base = base

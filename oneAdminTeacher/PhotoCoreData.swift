@@ -32,15 +32,18 @@ class PhotoCoreDataClass{
         let fetchRequest = NSFetchRequest(entityName: "Photo")
         fetchRequest.predicate = NSPredicate(format: "dsns=%@ and group=%@ and uid=%@", pd.Dsns, pd.Group, pd.Uid)
         
-        if let fetchResults = self.mocMain.executeFetchRequest(fetchRequest, error: nil) as? [NSManagedObject] {
+        if let fetchResults = (try? self.mocMain.executeFetchRequest(fetchRequest)) as? [NSManagedObject] {
             //update
             if fetchResults.count > 0 {
                 
-                var managedObject = fetchResults[0]
+                let managedObject = fetchResults[0]
                 
                 managedObject.setValue(pd.Photo, forKey: "preview")
                 
-                self.mocMain.save(nil)
+                do {
+                    try self.mocMain.save()
+                } catch _ {
+                }
             }
             else{
                 
@@ -55,7 +58,10 @@ class PhotoCoreDataClass{
                 myObject.setValue(pd.Photo, forKey: "preview")
                 myObject.setValue(nil, forKey: "detail")
                 
-                self.mocMain.save(nil)
+                do {
+                    try self.mocMain.save()
+                } catch _ {
+                }
                 
                 //println(error)
 
@@ -69,16 +75,19 @@ class PhotoCoreDataClass{
         let fetchRequest = NSFetchRequest(entityName: "Photo")
         fetchRequest.predicate = NSPredicate(format: "dsns=%@ and group=%@ and uid=%@", pd.Dsns, pd.Group, pd.Uid)
         
-        if let fetchResults = self.mocMain.executeFetchRequest(fetchRequest, error: nil) as? [NSManagedObject] {
+        if let fetchResults = (try? self.mocMain.executeFetchRequest(fetchRequest)) as? [NSManagedObject] {
             if fetchResults.count != 0 {
                 
-                var managedObject = fetchResults[0]
+                let managedObject = fetchResults[0]
                 
                 if let img = detail{
                     
                     managedObject.setValue(img, forKey: "detail")
                     
-                    self.mocMain.save(nil)
+                    do {
+                        try self.mocMain.save()
+                    } catch _ {
+                    }
                 }
                 
                 
@@ -94,9 +103,9 @@ class PhotoCoreDataClass{
         let fetchRequest = NSFetchRequest(entityName: "Photo")
         fetchRequest.predicate = NSPredicate(format: "dsns=%@ and group=%@ and uid=%@", pd.Dsns, pd.Group, pd.Uid)
         
-        if let fetchResults = self.mocMain.executeFetchRequest(fetchRequest, error: nil) as? [NSManagedObject] {
+        if let fetchResults = (try? self.mocMain.executeFetchRequest(fetchRequest)) as? [NSManagedObject] {
             
-            if fetchResults.count == 1{
+            if fetchResults.count > 0{
                 
                 if let preview = fetchResults[0].valueForKey("preview") as? UIImage{
                     img = preview
@@ -112,7 +121,7 @@ class PhotoCoreDataClass{
         let fetchRequest = NSFetchRequest(entityName: "Photo")
         fetchRequest.predicate = NSPredicate(format: "dsns=%@ and group=%@ and uid=%@", pd.Dsns, pd.Group, pd.Uid)
         
-        if let fetchResults = self.mocMain.executeFetchRequest(fetchRequest, error: nil) as? [NSManagedObject] {
+        if let fetchResults = (try? self.mocMain.executeFetchRequest(fetchRequest)) as? [NSManagedObject] {
             
             if fetchResults.count == 1{
                 
@@ -130,13 +139,16 @@ class PhotoCoreDataClass{
         
         let fetchRequest = NSFetchRequest(entityName: "Photo")
         
-        let results = self.mocMain.executeFetchRequest(fetchRequest, error: nil) as! [NSManagedObject]
+        let results = (try! self.mocMain.executeFetchRequest(fetchRequest)) as! [NSManagedObject]
         
         for obj in results {
             self.mocMain.deleteObject(obj)
         }
         
-        self.mocMain.save(nil)
+        do {
+            try self.mocMain.save()
+        } catch _ {
+        }
     }
     
     //Core Data using

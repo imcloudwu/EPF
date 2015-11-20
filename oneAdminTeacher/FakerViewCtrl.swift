@@ -58,9 +58,9 @@ class FakerViewCtrl: UIViewController,UICollectionViewDelegateFlowLayout,UIColle
         
         let data = groupDatas[indexPath.row]
         
-        let cell = collectionView.dequeueReusableCellWithReuseIdentifier(CellId, forIndexPath: indexPath) as! UICollectionViewCell
+        let cell = collectionView.dequeueReusableCellWithReuseIdentifier(CellId, forIndexPath: indexPath) 
         
-        var imgView = cell.viewWithTag(100) as! UIImageView
+        let imgView = cell.viewWithTag(100) as! UIImageView
         
         imgView.image = data.Photo
         

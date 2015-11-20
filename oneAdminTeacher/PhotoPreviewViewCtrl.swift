@@ -74,19 +74,19 @@ class PhotoPreviewViewCtrl: UIViewController,UICollectionViewDelegateFlowLayout,
         
         let data = PreviewDatas[indexPath.row]
         
-        let cell = collectionView.dequeueReusableCellWithReuseIdentifier("cell1", forIndexPath: indexPath) as! UICollectionViewCell
+        let cell = collectionView.dequeueReusableCellWithReuseIdentifier("cell1", forIndexPath: indexPath) 
         
-        var imgView = cell.viewWithTag(100) as! UIImageView
+        let imgView = cell.viewWithTag(100) as! UIImageView
         
         if data.Photo == nil {
             
-            if let catch = PhotoCoreData.LoadPreviewData(data) {
-                data.Photo = catch
+            if let `catch` = PhotoCoreData.LoadPreviewData(data) {
+                data.Photo = `catch`
             }
             else{
                 
                 dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0), {
-                    UpdatePreviewData(data,Global.TeacherContractName)
+                    UpdatePreviewData(data,contract: Global.TeacherContractName)
                     
                     dispatch_async(dispatch_get_main_queue(), {
                         PhotoCoreData.SaveCatchData(data)
@@ -147,7 +147,7 @@ class PhotoPreviewViewCtrl: UIViewController,UICollectionViewDelegateFlowLayout,
         
         var retVal = [PreviewData]()
         
-        var con = GetCommonConnect(GroupData.DSNS, Global.TeacherContractName)
+        var con = GetCommonConnect(GroupData.DSNS, contract: Global.TeacherContractName)
         
         var err : DSFault!
         
@@ -157,10 +157,12 @@ class PhotoPreviewViewCtrl: UIViewController,UICollectionViewDelegateFlowLayout,
             return retVal
         }
         
-        var nserr : NSError?
-        var xml = AEXMLDocument(xmlData: rsp.dataValue, error: &nserr)
-        
-        if nserr != nil{
+        //var nserr : NSError?
+        var xml: AEXMLDocument?
+        do {
+            xml = try AEXMLDocument(xmlData: rsp.dataValue)
+        } catch _ {
+            xml = nil
             return retVal
         }
         

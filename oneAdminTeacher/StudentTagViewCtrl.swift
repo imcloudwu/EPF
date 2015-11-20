@@ -72,7 +72,7 @@ class StudentTagViewCtrl: UIViewController,UITableViewDataSource,UITableViewDele
         
         let data = _TmpTagSelector.List[indexPath.row]
         
-        var cell = tableView.dequeueReusableCellWithIdentifier(CellId) as? UITableViewCell
+        var cell = tableView.dequeueReusableCellWithIdentifier(CellId)
         
         if cell == nil{
             cell = UITableViewCell(style: UITableViewCellStyle.Value1, reuseIdentifier: CellId)
@@ -82,7 +82,7 @@ class StudentTagViewCtrl: UIViewController,UITableViewDataSource,UITableViewDele
         cell?.textLabel?.text = data.StudentName
         //cell?.detailTextLabel?.text = data.Account
         
-        if contains(_TmpTagSelector.Selected, data){
+        if _TmpTagSelector.Selected.contains(data){
             cell?.accessoryType = UITableViewCellAccessoryType.Checkmark
         }
         else{
@@ -97,7 +97,7 @@ class StudentTagViewCtrl: UIViewController,UITableViewDataSource,UITableViewDele
         let data = _TmpTagSelector.List[indexPath.row]
         let cell = tableView.cellForRowAtIndexPath(indexPath)
         
-        if contains(_TmpTagSelector.Selected, data){
+        if _TmpTagSelector.Selected.contains(data){
             let index = _TmpTagSelector.IndexOf(data)
             _TmpTagSelector.Selected.removeAtIndex(index)
             cell?.accessoryType = UITableViewCellAccessoryType.None
@@ -128,7 +128,7 @@ class StudentTagViewCtrl: UIViewController,UITableViewDataSource,UITableViewDele
         }
         else{
             
-            var founds = _TagSelector.List.filter({ t in
+            let founds = _TagSelector.List.filter({ t in
                 
                 if let x = t.StudentName.lowercaseString.rangeOfString(searchText.lowercaseString){
                     return true

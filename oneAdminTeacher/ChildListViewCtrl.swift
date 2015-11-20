@@ -87,7 +87,7 @@ class ChildListViewCtrl: UIViewController,UITableViewDelegate,UITableViewDataSou
         self.refreshControl.endRefreshing()
         
         if !Global.HasPrivilege{
-            ShowErrorAlert(self, "超過使用期限", "請安裝新版並進行點數加值")
+            ShowErrorAlert(self, title: "超過使用期限", msg: "請安裝新版並進行點數加值")
             return
         }
         
@@ -108,7 +108,7 @@ class ChildListViewCtrl: UIViewController,UITableViewDelegate,UITableViewDataSou
             
             dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0), {
                 
-                var con = GetCommonConnect(dsns.AccessPoint, Global.BasicContractName)
+                var con = GetCommonConnect(dsns.AccessPoint, contract: Global.BasicContractName)
                 tmpList += GetMyChildren(con)
                 
                 dispatch_async(dispatch_get_main_queue(), {
@@ -173,7 +173,7 @@ class ChildListViewCtrl: UIViewController,UITableViewDelegate,UITableViewDataSou
         let data = _Data[indexPath.row]
         
         if data.DSNS == "header"{
-            var cell = tableView.dequeueReusableCellWithIdentifier("summaryItem") as? UITableViewCell
+            var cell = tableView.dequeueReusableCellWithIdentifier("summaryItem")
             
             if cell == nil{
                 cell = UITableViewCell(style: UITableViewCellStyle.Value1, reuseIdentifier: "summaryItem")
@@ -231,15 +231,15 @@ class ChildListViewCtrl: UIViewController,UITableViewDelegate,UITableViewDataSou
             
             menu.addAction(UIAlertAction(title: "是", style: UIAlertActionStyle.Destructive, handler: { (action) -> Void in
                 
-                var con = GetCommonConnect(cell.student.DSNS,Global.BasicContractName)
+                var con = GetCommonConnect(cell.student.DSNS,contract: Global.BasicContractName)
                 var err:DSFault!
                 con.SendRequest("main.RemoveChild", bodyContent: "<Request><StudentParent><StudentID>\(cell.student.ID)</StudentID></StudentParent></Request>", &err)
                 
                 if err != nil{
-                    ShowErrorAlert(self, "刪除失敗", err.message)
+                    ShowErrorAlert(self, title: "刪除失敗", msg: err.message)
                 }
                 else{
-                    ShowErrorAlert(self, "刪除成功", "")
+                    ShowErrorAlert(self, title: "刪除成功", msg: "")
                 }
                 
                 self.ReloadData()
@@ -250,7 +250,7 @@ class ChildListViewCtrl: UIViewController,UITableViewDelegate,UITableViewDataSou
     }
     
     func ToggleSideMenu(){
-        var app = UIApplication.sharedApplication().delegate as! AppDelegate
+        let app = UIApplication.sharedApplication().delegate as! AppDelegate
         
         app.centerContainer?.toggleDrawerSide(MMDrawerSide.Left, animated: true, completion: nil)
     }

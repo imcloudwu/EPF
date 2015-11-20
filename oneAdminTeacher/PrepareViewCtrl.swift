@@ -112,7 +112,7 @@ class PrepareViewCtrl: UIViewController {
                                 EnableSideMenu()
                                 
                                 //let nextView = self.storyboard?.instantiateViewControllerWithIdentifier("ClassQuery") as! UIViewController
-                                let nextView = self.storyboard?.instantiateViewControllerWithIdentifier("LastNews") as! UIViewController
+                                let nextView = self.storyboard?.instantiateViewControllerWithIdentifier("LastNews")
                                 
                                 ChangeContentView(nextView)
                             }
@@ -157,17 +157,22 @@ class PrepareViewCtrl: UIViewController {
         
         if let at = Global.AccessToken{
             if con.connect("https://auth.ischool.com.tw:8443/dsa/greening", "user", SecurityToken.createOAuthToken(at), &dserr){
-                var rsp = con.sendRequest("GetApplicationListRef", bodyContent: "<Request><Type>dynpkg</Type></Request>", &dserr)
+                let rsp = con.sendRequest("GetApplicationListRef", bodyContent: "<Request><Type>dynpkg</Type></Request>", &dserr)
                 
-                let xml = AEXMLDocument(xmlData: rsp.dataValue, error: &nserr)
+                let xml: AEXMLDocument?
+                do {
+                    xml = try AEXMLDocument(xmlData: rsp.dataValue)
+                } catch _ {
+                    xml = nil
+                }
                 //println(xml?.xmlString)
                 
                 if let apps = xml?.root["Response"]["User"]["App"].all {
                     for app in apps{
-                        let title = app.attributes["Title"] as! String
-                        let accessPoint = app.attributes["AccessPoint"] as! String
+                        let title = app.attributes["Title"]
+                        let accessPoint = app.attributes["AccessPoint"]
                         let dsns = DsnsItem(name: title, accessPoint: accessPoint)
-                        if !contains(dsnsList,dsns){
+                        if !dsnsList.contains(dsns){
                             dsnsList.append(dsns)
                         }
                     }
@@ -175,10 +180,10 @@ class PrepareViewCtrl: UIViewController {
                 
                 if let apps = xml?.root["Response"]["Domain"]["App"].all {
                     for app in apps{
-                        let title = app.attributes["Title"] as! String
-                        let accessPoint = app.attributes["AccessPoint"] as! String
+                        let title = app.attributes["Title"]
+                        let accessPoint = app.attributes["AccessPoint"]
                         let dsns = DsnsItem(name: title, accessPoint: accessPoint)
-                        if !contains(dsnsList,dsns){
+                        if !dsnsList.contains(dsns){
                             dsnsList.append(dsns)
                         }
                     }
@@ -216,7 +221,7 @@ class PrepareViewCtrl: UIViewController {
         Global.MyName = "My name"
         Global.MyEmail = "My e-mail"
         
-        var rsp = HttpClient.Get("https://auth.ischool.com.tw/services/me.php?access_token=\(Global.AccessToken)")
+        let rsp = try? HttpClient.Get("https://auth.ischool.com.tw/services/me.php?access_token=\(Global.AccessToken)")
         
         //println(NSString(data: rsp!, encoding: NSUTF8StringEncoding))
         
@@ -247,16 +252,18 @@ class PrepareViewCtrl: UIViewController {
         
         var retVal = [GroupItem]()
         
-        var rsp = HttpClient.Get("http://dsns.1campus.net/\(dsns)/sakura/GetMyGroup?stt=PassportAccessToken&AccessToken=\(Global.AccessToken)")
+        let rsp = try? HttpClient.Get("http://dsns.1campus.net/\(dsns)/sakura/GetMyGroup?stt=PassportAccessToken&AccessToken=\(Global.AccessToken)")
         
         if rsp == nil{
             return retVal
         }
         
-        var nserr : NSError?
-        var xml = AEXMLDocument(xmlData: rsp!, error: &nserr)
-        
-        if nserr != nil{
+        //var nserr : NSError?
+        var xml: AEXMLDocument?
+        do {
+            xml = try AEXMLDocument(xmlData: rsp!)
+        } catch _ {
+            xml = nil
             return retVal
         }
         
@@ -270,7 +277,7 @@ class PrepareViewCtrl: UIViewController {
                 let isParent = group["IsParent"].stringValue == "true" ? true : false
                 let isStudent = group["IsStudent"].stringValue == "true" ? true : false
                 
-                var gi = GroupItem(DSNS: dsns, GroupId: groupId, GroupName: groupName, IsTeacher: isTeacher)
+                let gi = GroupItem(DSNS: dsns, GroupId: groupId, GroupName: groupName, IsTeacher: isTeacher)
                 
                 //if !isStudent{
                     retVal.append(gi)
@@ -288,9 +295,18 @@ class DsnsItem : Equatable{
     var Name : String
     var AccessPoint : String
     
-    init(name:String,accessPoint:String){
-        self.Name = name
-        self.AccessPoint = accessPoint
+    init(name:String?,accessPoint:String?){
+        
+        self.Name = ""
+        self.AccessPoint = ""
+        
+        if let n = name{
+           self.Name = n
+        }
+        
+        if let a = accessPoint{
+            self.AccessPoint = a
+        }
     }
 }
 

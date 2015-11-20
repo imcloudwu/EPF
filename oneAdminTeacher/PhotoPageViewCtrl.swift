@@ -33,7 +33,7 @@ class PhotoPageViewCtrl: UIViewController,UIScrollViewDelegate
         
         scrView.addGestureRecognizer(scrViewDoubleTap)
         
-        var longPress = UILongPressGestureRecognizer(target: self, action: "LongPress")
+        let longPress = UILongPressGestureRecognizer(target: self, action: "LongPress")
         longPress.minimumPressDuration = 0.5
         
         imgView.addGestureRecognizer(longPress)
@@ -44,7 +44,7 @@ class PhotoPageViewCtrl: UIViewController,UIScrollViewDelegate
             
             dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0), {
                 
-                var value = self.GetDetailData(true)
+                let value = self.GetDetailData(true)
                 
                 dispatch_async(dispatch_get_main_queue(), {
                     self.SetTextView(value.0)
@@ -54,7 +54,7 @@ class PhotoPageViewCtrl: UIViewController,UIScrollViewDelegate
         else{
             dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0), {
                 
-                var value = self.GetDetailData(false)
+                let value = self.GetDetailData(false)
                 
                 dispatch_async(dispatch_get_main_queue(), {
                     
@@ -103,7 +103,7 @@ class PhotoPageViewCtrl: UIViewController,UIScrollViewDelegate
         
         var contract = TeacherMode ? Global.TeacherContractName : Global.BasicContractName
         
-        var con = GetCommonConnect(Base.Dsns, contract)
+        var con = GetCommonConnect(Base.Dsns, contract: contract)
         
         var err : DSFault!
         
@@ -113,10 +113,12 @@ class PhotoPageViewCtrl: UIViewController,UIScrollViewDelegate
             return retVal
         }
         
-        var nserr : NSError?
-        var xml = AEXMLDocument(xmlData: rsp.dataValue, error: &nserr)
-        
-        if nserr != nil{
+        //var nserr : NSError?
+        var xml: AEXMLDocument?
+        do {
+            xml = try AEXMLDocument(xmlData: rsp.dataValue)
+        } catch _ {
+            xml = nil
             return retVal
         }
         
@@ -135,7 +137,7 @@ class PhotoPageViewCtrl: UIViewController,UIScrollViewDelegate
         
         Global.PhotoNeedReload = true
         
-        var con = GetCommonConnect(Base.Dsns, Global.TeacherContractName)
+        var con = GetCommonConnect(Base.Dsns, contract: Global.TeacherContractName)
         
         var err : DSFault!
         
@@ -150,8 +152,10 @@ class PhotoPageViewCtrl: UIViewController,UIScrollViewDelegate
     
     func SavePhoto(){
         //儲存圖片到本機相簿
-        UIImageWriteToSavedPhotosAlbum(self.imgView.image, self, nil, nil)
-        Global.MyToast.ToastMessage(self.view, msg: "下載完成...",callback : nil)
+        if let img = self.imgView.image{
+            UIImageWriteToSavedPhotosAlbum(img, self, nil, nil)
+            Global.MyToast.ToastMessage(self.view, msg: "下載完成...",callback : nil)
+        }
     }
     
     func EditPhoto(){

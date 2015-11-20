@@ -43,7 +43,7 @@ class PhotoManageViewCtrl: UIViewController,UITableViewDelegate,UITableViewDataS
             
             dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0), {
                 
-                var needReload = self.GetPreviewData(data)
+                let needReload = self.GetPreviewData(data)
                 
                 dispatch_async(dispatch_get_main_queue(), {
                     
@@ -58,7 +58,7 @@ class PhotoManageViewCtrl: UIViewController,UITableViewDelegate,UITableViewDataS
     }
     
     func ToggleSideMenu(){
-        var app = UIApplication.sharedApplication().delegate as! AppDelegate
+        let app = UIApplication.sharedApplication().delegate as! AppDelegate
         
         app.centerContainer?.toggleDrawerSide(MMDrawerSide.Left, animated: true, completion: nil)
     }
@@ -109,7 +109,7 @@ class PhotoManageViewCtrl: UIViewController,UITableViewDelegate,UITableViewDataS
     
     func GetPreviewData(gellery:GelleryItem) -> Bool{
         
-        var con = GetCommonConnect(gellery.Group.DSNS, Global.TeacherContractName)
+        var con = GetCommonConnect(gellery.Group.DSNS, contract: Global.TeacherContractName)
         
         var err : DSFault!
         
@@ -122,10 +122,12 @@ class PhotoManageViewCtrl: UIViewController,UITableViewDelegate,UITableViewDataS
             return false
         }
         
-        var nserr : NSError?
-        var xml = AEXMLDocument(xmlData: rsp.dataValue, error: &nserr)
-        
-        if nserr != nil{
+        //var nserr : NSError?
+        var xml: AEXMLDocument?
+        do {
+            xml = try AEXMLDocument(xmlData: rsp.dataValue)
+        } catch _ {
+            xml = nil
             return false
         }
         
