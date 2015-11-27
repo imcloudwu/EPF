@@ -8,21 +8,21 @@
 
 public class NotificationService{
     
-    private static var registerUrl : String = "https://1campus.net/notification/device/api/post/token/%@"
+    private static var registerUrl : String = "https://1campus.net/notificationEPF/device/api/post/token/%@"
     
-    private static var unRegisterUrl : String = "https://1campus.net/notification/device/api/put/dismiss/token/%@"
+    private static var unRegisterUrl : String = "https://1campus.net/notificationEPF/device/api/put/dismiss/token/%@"
     
-    private static var getMessageUrl : String = "https://1campus.net/notification/api/get/all/p/%@/token/%@"
+    private static var getMessageUrl : String = "https://1campus.net/notificationEPF/api/get/all/p/%@/token/%@"
     
-    private static var getMessageByIdUrl : String = "https://1campus.net/notification/api/get/id/%@/token/%@"
+    private static var getMessageByIdUrl : String = "https://1campus.net/notificationEPF/api/get/id/%@/token/%@"
     
-    private static var getMessageCountUrl : String = "https://1campus.net/notification/api/get/all/count/token/%@"
+    private static var getMessageCountUrl : String = "https://1campus.net/notificationEPF/api/get/all/count/token/%@"
     
-    private static var setReadUrl : String = "https://1campus.net/notification/api/put/read/token/%@"
+    private static var setReadUrl : String = "https://1campus.net/notificationEPF/api/put/read/token/%@"
     
-    private static var sendMessageUrl : String = "https://1campus.net/notification/api/post/token/%@"
+    private static var sendMessageUrl : String = "https://1campus.net/notificationEPF/api/post/token/%@"
     
-    private static var replyUrl : String = "https://1campus.net/notification/api/put/%@/reply/token/%@"
+    private static var replyUrl : String = "https://1campus.net/notificationEPF/api/put/%@/reply/token/%@"
     
     private static var newMessageDelegate : (() -> ())?
     

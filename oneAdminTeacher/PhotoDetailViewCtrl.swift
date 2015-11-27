@@ -12,7 +12,7 @@ class PhotoDetailViewCtrl: UIViewController,UIPageViewControllerDataSource {
     
     var pageViewController : UIPageViewController?
     
-    var Uids : [String]!
+    var POs : [PhotoObj]!
     var Base : PreviewData!
     var CurrentIndex : Int!
     
@@ -69,7 +69,7 @@ class PhotoDetailViewCtrl: UIViewController,UIPageViewControllerDataSource {
         
         index++
         
-        if (index == self.Uids.count) {
+        if (index == self.POs.count) {
             return nil
         }
         
@@ -78,7 +78,7 @@ class PhotoDetailViewCtrl: UIViewController,UIPageViewControllerDataSource {
     
     func viewControllerAtIndex(index: Int) -> PhotoPageViewCtrl?
     {
-        if self.Uids.count == 0 || index >= self.Uids.count
+        if self.POs.count == 0 || index >= self.POs.count
         {
             return nil
         }
@@ -87,7 +87,8 @@ class PhotoDetailViewCtrl: UIViewController,UIPageViewControllerDataSource {
         let pageContentViewController = self.storyboard?.instantiateViewControllerWithIdentifier("PhotoPageViewCtrl") as! PhotoPageViewCtrl
         
         let base = Base.Clone
-        base.Uid = Uids[index]
+        base.Dsns = POs[index].Dsns
+        base.Uid = POs[index].Uid
         
         pageContentViewController.Base = base
         pageContentViewController.Index = index
@@ -100,7 +101,7 @@ class PhotoDetailViewCtrl: UIViewController,UIPageViewControllerDataSource {
     
     func presentationCountForPageViewController(pageViewController: UIPageViewController) -> Int
     {
-        return Uids.count
+        return POs.count
     }
     
     func presentationIndexForPageViewController(pageViewController: UIPageViewController) -> Int

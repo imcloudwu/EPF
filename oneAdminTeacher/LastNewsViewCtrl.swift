@@ -137,7 +137,7 @@ class LastNewsViewCtrl: UIViewController,UITableViewDelegate,UITableViewDataSour
         let nextView = self.storyboard?.instantiateViewControllerWithIdentifier("PhotoDetailViewCtrl") as! PhotoDetailViewCtrl
         
         nextView.Base = data.PreData
-        nextView.Uids = _LastNewItems.map({return $0.PreData.Uid})
+        nextView.POs = _LastNewItems.map({return $0.PreData.PO})
         nextView.CurrentIndex = indexPath.row
         
         self.navigationController?.pushViewController(nextView, animated: true)
@@ -206,6 +206,11 @@ class LastNewsViewCtrl: UIViewController,UITableViewDelegate,UITableViewDataSour
         app.centerContainer?.toggleDrawerSide(MMDrawerSide.Left, animated: true, completion: nil)
     }
     
+}
+
+struct PhotoObj {
+    var Dsns : String
+    var Uid : String
 }
 
 class LastNewItem : Equatable{

@@ -183,7 +183,7 @@ class StudentAlbumViewCtrl: UIViewController,UICollectionViewDelegateFlowLayout,
         let nextView = self.storyboard?.instantiateViewControllerWithIdentifier("PhotoDetailViewCtrl") as! PhotoDetailViewCtrl
         
         nextView.Base = data
-        nextView.Uids = groupDatas.map({return $0.Uid})
+        nextView.POs = groupDatas.map({return $0.PO})
         nextView.CurrentIndex = indexPath.row
         
         self.navigationController?.pushViewController(nextView, animated: true)

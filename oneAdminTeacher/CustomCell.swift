@@ -21,6 +21,31 @@ class GroupHeader : UICollectionReusableView {
     }
 }
 
+class BorrowCell : UITableViewCell{
+    
+    @IBOutlet weak var Date: UILabel!
+    @IBOutlet weak var Type: UILabel!
+    @IBOutlet weak var Name: UILabel!
+    
+    override func awakeFromNib() {
+        Type.layer.masksToBounds = true
+        Type.layer.cornerRadius = 5
+    }
+}
+
+class HealthCell : UITableViewCell{
+    
+    @IBOutlet weak var IconFrame: UIView!
+    @IBOutlet weak var Date: UILabel!
+    @IBOutlet weak var Icon: UIImageView!
+    @IBOutlet weak var Title: UILabel!
+    
+    override func awakeFromNib() {
+        IconFrame.layer.masksToBounds = true
+        IconFrame.layer.cornerRadius = IconFrame.frame.width / 2
+    }
+}
+
 class LastNewsCell : UITableViewCell{
     
     @IBOutlet weak var Photo: UIImageView!

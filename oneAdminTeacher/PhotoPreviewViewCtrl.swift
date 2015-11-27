@@ -16,7 +16,7 @@ class PhotoPreviewViewCtrl: UIViewController,UICollectionViewDelegateFlowLayout,
     
     var PreviewDatas = [PreviewData]()
     
-    var Uids = [String]()
+    var POs = [PhotoObj]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -56,11 +56,13 @@ class PhotoPreviewViewCtrl: UIViewController,UICollectionViewDelegateFlowLayout,
         Global.PhotoNeedReload = false
         
         self.PreviewDatas = self.GetPreviewDatas()
-        self.Uids.removeAll(keepCapacity: true)
+        self.POs.removeAll(keepCapacity: true)
         
-        for data in self.PreviewDatas{
-            self.Uids.append(data.Uid)
-        }
+        self.POs = self.PreviewDatas.map({return $0.PO})
+        
+//        for data in self.PreviewDatas{
+//            self.POs.append(data.PO)
+//        }
         
         self.collectionView.reloadData()
     }
@@ -136,7 +138,7 @@ class PhotoPreviewViewCtrl: UIViewController,UICollectionViewDelegateFlowLayout,
         let nextView = self.storyboard?.instantiateViewControllerWithIdentifier("PhotoDetailViewCtrl") as! PhotoDetailViewCtrl
         
         nextView.Base = data
-        nextView.Uids = Uids
+        nextView.POs = POs
         nextView.CurrentIndex = indexPath.row
         nextView.TeacherMode = true
         
@@ -221,5 +223,9 @@ class PreviewData{
     
     var Clone : PreviewData{
         return PreviewData(dsns: Dsns, uid: Uid, group: Group)
+    }
+    
+    var PO : PhotoObj{
+        return PhotoObj(Dsns : Dsns, Uid : Uid)
     }
 }

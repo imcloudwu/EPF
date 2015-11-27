@@ -130,7 +130,15 @@ class StudentDetailViewCtrl: UIViewController {
         }
         else if Segment.selectedSegmentIndex == 2{
             
-            let contentView = self.storyboard?.instantiateViewControllerWithIdentifier("TempPageViewCtrl") as! TempPageViewCtrl
+            let contentView = self.storyboard?.instantiateViewControllerWithIdentifier("HealthViewCtrl") as! HealthViewCtrl
+            
+            contentView.StudentData = StudentData
+            
+            ChangeContainerViewContent(contentView)
+        }
+        else if Segment.selectedSegmentIndex == 3{
+            
+            let contentView = self.storyboard?.instantiateViewControllerWithIdentifier("LibraryViewCtrl") as! LibraryViewCtrl
             
             contentView.StudentData = StudentData
             

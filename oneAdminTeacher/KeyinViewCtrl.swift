@@ -358,7 +358,9 @@ class KeyinViewCtrl: UIViewController,UITableViewDelegate,UITableViewDataSource,
             confirm.addAction(UIAlertAction(title: "取消", style: UIAlertActionStyle.Cancel, handler: nil))
             confirm.addAction(UIAlertAction(title: "確認", style: UIAlertActionStyle.Destructive, handler: { (action) -> Void in
                 
-                var rsp = con.sendRequest("_.JoinAsParent", bodyContent: "<Request><StudentId>\(Id)</StudentId><Relationship>\(self.relationship.text)</Relationship></Request>", &err)
+                let relationShip = self.relationship.text!.isEmpty ? "iOS Parent" : self.relationship.text
+                
+                var rsp = con.sendRequest("_.JoinAsParent", bodyContent: "<Request><StudentId>\(Id)</StudentId><Relationship>\(relationShip)</Relationship></Request>", &err)
                 
                 if err != nil{
                     ShowErrorAlert(self, title: "過程發生錯誤", msg: err.message)
