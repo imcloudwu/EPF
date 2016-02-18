@@ -12,7 +12,7 @@ import CoreData
 
 class PhotoCoreDataClass{
     
-    static var LockQueue = dispatch_queue_create("PhotoCoreDataClassLockQueue", nil)
+    //static var LockQueue = dispatch_queue_create("PhotoCoreDataClassLockQueue", nil)
     
     var appDelegate : AppDelegate
     var mocMain : NSManagedObjectContext!

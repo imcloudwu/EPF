@@ -42,7 +42,7 @@ class TempPageViewCtrl: UIViewController,ChartViewDelegate,UIScrollViewDelegate 
         
         //let height = Global.ScreenSize.width * 0.75
         
-        var xPostiton = CGFloat(0)
+        let xPostiton = CGFloat(0)
         var yPostiton = CGFloat(10)
         
         //BC = BarChartView(frame: CGRect(x: 0, y: yPostiton, width: Global.ScreenSize.width, height: Global.ScreenSize.width))
@@ -52,36 +52,40 @@ class TempPageViewCtrl: UIViewController,ChartViewDelegate,UIScrollViewDelegate 
             
             LineChart1 = LineChartView(frame: CGRect(x: xPostiton, y: yPostiton, width: Global.ScreenSize.width, height: Global.ScreenSize.width))
             //yPostiton += Global.ScreenSize.width
-            xPostiton += Global.ScreenSize.width
+            //xPostiton += Global.ScreenSize.width
             
             scrollView.addSubview(LineChart1)
             
             SetChartDefault(LineChart1)
+            
+            yPostiton += Global.ScreenSize.width + 10
         }
         
         if DataTitles.count > 1{
             
             LineChart2 = LineChartView(frame: CGRect(x: xPostiton, y: yPostiton, width: Global.ScreenSize.width, height: Global.ScreenSize.width))
             //yPostiton += Global.ScreenSize.width
-            xPostiton += Global.ScreenSize.width
+            //xPostiton += Global.ScreenSize.width
             
             scrollView.addSubview(LineChart2)
             
             SetChartDefault(LineChart2)
+            
+            yPostiton += Global.ScreenSize.width + 10
         }
         
         if DataTitles.count > 2{
             
             LineChart3 = LineChartView(frame: CGRect(x: xPostiton, y: yPostiton, width: Global.ScreenSize.width, height: Global.ScreenSize.width))
             //yPostiton += Global.ScreenSize.width
-            xPostiton += Global.ScreenSize.width
+            //xPostiton += Global.ScreenSize.width
             
             scrollView.addSubview(LineChart3)
             
             SetChartDefault(LineChart3)
+            
+            yPostiton += Global.ScreenSize.width + 10
         }
-        
-        yPostiton += Global.ScreenSize.width
         
 //        if StudentData.Name == "黃小翔"{
 //            
@@ -160,7 +164,7 @@ class TempPageViewCtrl: UIViewController,ChartViewDelegate,UIScrollViewDelegate 
 //        }
         
         scrollView.contentSize = CGSizeMake(xPostiton, yPostiton)
-        scrollView.pagingEnabled = true
+        //scrollView.pagingEnabled = true
         
         // Do any additional setup after loading the view, typically from a nib.
     }
@@ -298,6 +302,10 @@ class TempPageViewCtrl: UIViewController,ChartViewDelegate,UIScrollViewDelegate 
         lcv.descriptionText = "2015"
         lcv.descriptionTextColor = UIColor.darkGrayColor()
         lcv.descriptionFont = UIFont.systemFontOfSize(16.0)
+        
+        lcv.rightAxis.drawAxisLineEnabled = false
+        lcv.rightAxis.drawLabelsEnabled = false
+        lcv.xAxis.labelPosition = ChartXAxis.XAxisLabelPosition.Bottom
     }
 
     

@@ -39,7 +39,9 @@ class PhotoPreviewViewCtrl: UIViewController,UICollectionViewDelegateFlowLayout,
         
         editView.GroupData = GroupData
         
-        self.navigationController?.pushViewController(editView, animated: true)
+        //dispatch_async(dispatch_get_main_queue()){
+            self.navigationController?.pushViewController(editView, animated: true)
+        //}
     }
     
     override func didReceiveMemoryWarning() {

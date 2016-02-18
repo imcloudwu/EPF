@@ -117,6 +117,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let installation = PFInstallation.currentInstallation()
         installation.setDeviceTokenFromData(deviceToken)
         Global.MyDeviceToken = installation.deviceToken
+        print(Global.MyDeviceToken)
+        installation.badge = 0
         installation.saveInBackground()
         
         PFPush.subscribeToChannelInBackground("") { (succeeded: Bool, error: NSError?) in

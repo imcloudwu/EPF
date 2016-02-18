@@ -47,6 +47,18 @@ class PhotoEditViewCtrl: UIViewController,UIImagePickerControllerDelegate,ELCIma
         self.navigationController?.pushViewController(selector, animated: true)
     }
     
+    @IBAction func AutoTag(sender: AnyObject) {
+        
+        let nextView = self.storyboard?.instantiateViewControllerWithIdentifier("FaceDectectViewCtrl") as! FaceDectectViewCtrl
+        
+        nextView._TagSelector = _TagSelector
+        
+        nextView.ImageDatas = _selectedImg
+        
+        self.navigationController?.pushViewController(nextView, animated: true)
+    }
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -62,7 +74,7 @@ class PhotoEditViewCtrl: UIViewController,UIImagePickerControllerDelegate,ELCIma
         AutoBtn = self.view.viewWithTag(200) as! UIButton
         
         ManualyBtn.enabled = false
-        AutoBtn.enabled = false
+        //AutoBtn.enabled = false
         
         // Do any additional setup after loading the view, typically from a nib.
     }
@@ -75,7 +87,7 @@ class PhotoEditViewCtrl: UIViewController,UIImagePickerControllerDelegate,ELCIma
         
         self.SetTagLabel()
         
-        if !ManualyBtn.enabled{
+        if !ManualyBtn.enabled || !AutoBtn.enabled{
             
             dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0), {
                let members = self.GetGroupMembers()
@@ -85,6 +97,7 @@ class PhotoEditViewCtrl: UIViewController,UIImagePickerControllerDelegate,ELCIma
                     self._TagSelector.List = members
                     self._TagSelector.Selected = selected
                     self.ManualyBtn.enabled = true
+                    self.AutoBtn.enabled = true
                     self.SetTagLabel()
                 })
             })

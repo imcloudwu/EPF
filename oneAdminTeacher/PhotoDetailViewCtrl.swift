@@ -21,7 +21,8 @@ class PhotoDetailViewCtrl: UIViewController,UIPageViewControllerDataSource {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        pageViewController = UIPageViewController(transitionStyle: .PageCurl, navigationOrientation: .Horizontal, options: nil)
+        pageViewController = UIPageViewController(transitionStyle: .Scroll, navigationOrientation: .Horizontal, options: nil)
+        
         pageViewController!.dataSource = self
         
         // Do any additional setup after loading the view, typically from a nib.
@@ -101,7 +102,7 @@ class PhotoDetailViewCtrl: UIViewController,UIPageViewControllerDataSource {
     
     func presentationCountForPageViewController(pageViewController: UIPageViewController) -> Int
     {
-        return POs.count
+        return 0
     }
     
     func presentationIndexForPageViewController(pageViewController: UIPageViewController) -> Int

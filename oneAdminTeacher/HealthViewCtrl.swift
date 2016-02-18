@@ -123,9 +123,9 @@ class HealthViewCtrl: UIViewController,UITableViewDelegate,UITableViewDataSource
             
         }
         
-        retVal.sortInPlace({ $0.Date > $1.Date })
+        //retVal.sortInPlace({ $0.Date > $1.Date })
         
-        return retVal
+        return retVal.sort({ $0.Date > $1.Date })
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int{
@@ -186,6 +186,10 @@ class HealthViewCtrl: UIViewController,UITableViewDelegate,UITableViewDataSource
         var datas2 = [Double]()
         var datas3 = [Double]()
         
+        let dateFormate = NSDateFormatter()
+        
+        dateFormate.dateFormat = "MM/dd"
+        
         switch data.Type{
             
             case "Grow" :
@@ -196,7 +200,7 @@ class HealthViewCtrl: UIViewController,UITableViewDelegate,UITableViewDataSource
                 
                 for t in tmpDatas{
                     
-                    let date = _dateFormate.stringFromDate(t.Date)
+                    let date = dateFormate.stringFromDate(t.Date)
                     
                     if !dateArr.contains(date){
                         
@@ -217,7 +221,7 @@ class HealthViewCtrl: UIViewController,UITableViewDelegate,UITableViewDataSource
                 
                 for t in tmpDatas{
                     
-                    let date = _dateFormate.stringFromDate(t.Date)
+                    let date = dateFormate.stringFromDate(t.Date)
                     
                     if !dateArr.contains(date){
                         

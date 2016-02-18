@@ -21,6 +21,15 @@ class GroupHeader : UICollectionReusableView {
     }
 }
 
+class FaceCell : UITableViewCell{
+    
+    @IBOutlet weak var Face: UIImageView!
+    @IBOutlet weak var Name: UILabel!
+    
+    override func awakeFromNib() {
+    }
+}
+
 class BorrowCell : UITableViewCell{
     
     @IBOutlet weak var Date: UILabel!

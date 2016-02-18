@@ -72,6 +72,12 @@ class PrepareViewCtrl: UIViewController {
     
     override func viewDidAppear(animated: Bool) {
         
+        FaceppAPI.initWithApiKey("4857f2b710d440edf1055a4fb2b97c5a", andApiSecret: "4ItoLGR6ED0irFYzuF1qLuoUU23UZ4MZ", andRegion: APIServerRegionCN)
+        
+        FaceppAPI.setDebugMode(true)
+        
+        FaceppAPI.group().createWithGroupName("epf")
+        
         // create KYCircularProgress
         StartProgress()
         

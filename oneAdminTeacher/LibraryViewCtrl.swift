@@ -102,9 +102,9 @@ class LibraryViewCtrl: UIViewController,UITableViewDelegate,UITableViewDataSourc
             }
         }
         
-        retVal.sortInPlace({ $0.BorrowDate > $1.BorrowDate})
+        //retVal.sortInPlace({ $0.BorrowDate > $1.BorrowDate})
         
-        return retVal
+        return retVal.sort({ $0.BorrowDate > $1.BorrowDate})
         
     }
 }
