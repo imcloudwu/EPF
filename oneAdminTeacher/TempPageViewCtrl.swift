@@ -50,7 +50,7 @@ class TempPageViewCtrl: UIViewController,ChartViewDelegate,UIScrollViewDelegate 
         
         if DataTitles.count > 0{
             
-            LineChart1 = LineChartView(frame: CGRect(x: xPostiton, y: yPostiton, width: Global.ScreenSize.width, height: Global.ScreenSize.width))
+            LineChart1 = LineChartView(frame: CGRect(x: xPostiton, y: yPostiton, width: Global.ScreenSize.width, height: Global.ScreenSize.width * 0.5))
             //yPostiton += Global.ScreenSize.width
             //xPostiton += Global.ScreenSize.width
             
@@ -58,12 +58,12 @@ class TempPageViewCtrl: UIViewController,ChartViewDelegate,UIScrollViewDelegate 
             
             SetChartDefault(LineChart1)
             
-            yPostiton += Global.ScreenSize.width + 10
+            yPostiton += Global.ScreenSize.width * 0.5 + 10
         }
         
         if DataTitles.count > 1{
             
-            LineChart2 = LineChartView(frame: CGRect(x: xPostiton, y: yPostiton, width: Global.ScreenSize.width, height: Global.ScreenSize.width))
+            LineChart2 = LineChartView(frame: CGRect(x: xPostiton, y: yPostiton, width: Global.ScreenSize.width, height: Global.ScreenSize.width * 0.5))
             //yPostiton += Global.ScreenSize.width
             //xPostiton += Global.ScreenSize.width
             
@@ -71,12 +71,12 @@ class TempPageViewCtrl: UIViewController,ChartViewDelegate,UIScrollViewDelegate 
             
             SetChartDefault(LineChart2)
             
-            yPostiton += Global.ScreenSize.width + 10
+            yPostiton += Global.ScreenSize.width * 0.5 + 10
         }
         
         if DataTitles.count > 2{
             
-            LineChart3 = LineChartView(frame: CGRect(x: xPostiton, y: yPostiton, width: Global.ScreenSize.width, height: Global.ScreenSize.width))
+            LineChart3 = LineChartView(frame: CGRect(x: xPostiton, y: yPostiton, width: Global.ScreenSize.width, height: Global.ScreenSize.width * 0.5))
             //yPostiton += Global.ScreenSize.width
             //xPostiton += Global.ScreenSize.width
             
@@ -84,7 +84,7 @@ class TempPageViewCtrl: UIViewController,ChartViewDelegate,UIScrollViewDelegate 
             
             SetChartDefault(LineChart3)
             
-            yPostiton += Global.ScreenSize.width + 10
+            yPostiton += Global.ScreenSize.width * 0.5 + 10
         }
         
 //        if StudentData.Name == "黃小翔"{

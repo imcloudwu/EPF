@@ -15,6 +15,8 @@ class LoginViewCtrl: UIViewController,UIWebViewDelegate {
         
         HttpClient.TrustServerList.insert("1campus.net")
         
+        HttpClient.TrustServerList.insert("efp-finder.ischool.com.tw")
+        
         progressTimer = ProgressTimer(progressBar: ProgressBar)
         
         let reloadBtn =  UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.Refresh, target: self, action: "showLoginView")
@@ -44,15 +46,21 @@ class LoginViewCtrl: UIViewController,UIWebViewDelegate {
     }
     
     func showLoginView(){
-//        let target = "https://auth.ischool.com.tw/oauth/authorize.php?client_id=\(Global.clientID)&response_type=code&state=redirect_uri%3A%2F&redirect_uri=http://＿blank&lang=zh-tw&scope=User.Mail,User.BasicInfo,1Campus.Notification.Read,1Campus.Notification.Send,*:sakura,*:ischool.teacher.app"
+        
+        NSURLCache.sharedURLCache().removeAllCachedResponses()
+        
+        let storage : NSHTTPCookieStorage = NSHTTPCookieStorage.sharedHTTPCookieStorage()
+        
+        for cookie in storage.cookies!
+        {
+            storage.deleteCookie(cookie)
+        }
         
         let scope = "User.Mail,User.BasicInfo,1Campus.Notification.Read,1Campus.Notification.Send,*:auth.guest,*:sakura,*:\(Global.BasicContractName),*:\(Global.TeacherContractName)"
         
         let target = "https://auth.ischool.com.tw/oauth/authorize.php?client_id=\(Global.clientID)&response_type=code&state=http://_blank&redirect_uri=http://_blank&scope=\(scope)"
         
-        //let target = "https://auth.ischool.com.tw/oauth/authorize.php?client_id=\(Global.clientID)&response_type=code&state=http://_blank&redirect_uri=http://_blank"
-        
-//        let target = "https://auth.ischool.com.tw/oauth/authorize.php?client_id=\(Global.clientID)&response_type=code&state=http://_blank&redirect_uri=http://_blank&scope=User.Mail,User.BasicInfo,*:ischool.teacher.app"
+        //let target = "http://www.google.com"
         
         //載入登入頁面
         let urlobj = NSURL(string: target)

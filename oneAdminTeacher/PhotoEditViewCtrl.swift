@@ -402,7 +402,7 @@ class PhotoEditViewCtrl: UIViewController,UIImagePickerControllerDelegate,ELCIma
         let dsns = Base == nil ? GroupData.DSNS : Base.Dsns
         let groupId = Base == nil ? GroupData.GroupId : Base.Group
         
-        let rsp = try? HttpClient.Get("https://dsns.1campus.net/\(dsns)/sakura/GetGroupMember?stt=PassportAccessToken&AccessToken=\(Global.AccessToken)&parser=spliter&content=GroupId:\(groupId)")
+        let rsp = try? HttpClient.Get("http://dsns.1campus.net/\(dsns)/sakura/GetGroupMember?stt=PassportAccessToken&AccessToken=\(Global.AccessToken)&parser=spliter&content=GroupId:\(groupId)")
         
         if rsp == nil{
             return retVal

@@ -110,7 +110,11 @@ class SideMenuViewCtrl: UIViewController{
         {
             storage.deleteCookie(cookie)
         }
+        
+        NSURLCache.sharedURLCache().removeAllCachedResponses()
+        
         NSUserDefaults.standardUserDefaults()
+        
         Keychain.delete("refreshToken")
         
         let backView = self.storyboard?.instantiateViewControllerWithIdentifier("StartView") as! UINavigationController

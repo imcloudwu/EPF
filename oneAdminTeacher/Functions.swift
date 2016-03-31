@@ -72,7 +72,7 @@ func GetMyChildGroup(StudentData:Student) -> [GroupItem]{
     
     var retVal = [GroupItem]()
     
-    let rsp = try? HttpClient.Get("https://dsns.1campus.net/\(StudentData.DSNS)/sakura/GetMyChild?stt=PassportAccessToken&AccessToken=\(Global.AccessToken)")
+    let rsp = try? HttpClient.Get("http://dsns.1campus.net/\(StudentData.DSNS)/sakura/GetMyChild?stt=PassportAccessToken&AccessToken=\(Global.AccessToken)")
     
     if rsp == nil{
         return retVal
@@ -117,7 +117,7 @@ func GetMyChildGroup(dsns:DsnsItem) -> [GroupItem]{
     
     var retVal = [GroupItem]()
     
-    let rsp = try? HttpClient.Get("https://dsns.1campus.net/\(dsns.AccessPoint)/sakura/GetMyChild?stt=PassportAccessToken&AccessToken=\(Global.AccessToken)")
+    let rsp = try? HttpClient.Get("http://dsns.1campus.net/\(dsns.AccessPoint)/sakura/GetMyChild?stt=PassportAccessToken&AccessToken=\(Global.AccessToken)")
     
     if rsp == nil{
         return retVal
